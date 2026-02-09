@@ -1,0 +1,119 @@
+﻿@{
+    ViewData["Title"] = "Task Management";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+   
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  
+    <!-- Meniul principal -->
+    <div id="menuScreen" class="screen">
+        <div class="container">
+            <h1 class="title">Task Manager</h1>
+            <div class="quote" id="quote">"Planifică-ți ziua și ziua te va răsplăti"</div>
+
+            <div class="menu-grid">
+                <button class="cat-btn big-btn" data-cat="university">
+                    <span class="btn-icon">🎓</span>
+                    <span class="btn-text">Universitate</span>
+                </button>
+                <button class="cat-btn big-btn" data-cat="work">
+                    <span class="btn-icon">💼</span>
+                    <span class="btn-text">Muncă</span>
+                </button>
+                <button class="cat-btn big-btn" data-cat="travel">
+                    <span class="btn-icon">✈️</span>
+                    <span class="btn-text">Travel</span>
+                </button>
+                <button class="cat-btn big-btn" data-cat="personal">
+                    <span class="btn-icon">🏠</span>
+                    <span class="btn-text">Personal</span>
+                </button>
+            </div>
+
+            <footer>Druc Anastasia 2026</footer>
+        </div>
+    </div>
+
+    <!-- Interfața task-urilor -->
+    <button id="backBtn" class="back-btn">← Înapoi la meniu</button>
+    <div id="taskScreen" class="screen" style="display:none;">
+        <div class="container">
+
+  
+            <header class="header">
+                <h1 class="title" id="pageTitle">Task Manager</h1>
+                <div class="quote" id="quoteTask">"Cunoașterea este putere — organizeaz-o!"</div>
+            </header>
+
+            <div class="form-section">
+                <input type="text" id="taskInput" placeholder="Scrie un task..." autocomplete="off">
+                <button id="addBtn">Adaugă</button>
+            </div>
+
+            <div class="search-section">
+                <input type="text" id="searchInput" placeholder="Caută task...">
+            </div>
+
+            <div class="stages">
+                <div class="stage todo-stage" id="todo">
+                    <div class="stage-header">
+                        <span class="stage-icon">📋</span>
+                        <h2>To Do</h2>
+                    </div>
+                    <div class="tasks-list"></div>
+                </div>
+
+                <div class="stage" id="progress">
+                    <div class="stage-header">
+                        <span class="stage-icon">🔄</span>
+                        <h2>In Progress</h2>
+                    </div>
+                    <div class="tasks-list"></div>
+                </div>
+
+                <div class="stage done-stage" id="done">
+                    <div class="stage-header">
+                        <span class="stage-icon">✅</span>
+                        <h2>Done</h2>
+                    </div>
+                    <div class="tasks-list"></div>
+                </div>
+            </div>
+
+            <div class="stats">
+                <canvas id="chart" width="250" height="250"></canvas>
+                <div class="percent" id="percent">0%</div>
+                <div class="stats-summary" id="statsSummary"></div>
+            </div>
+
+            <section class="notes-canvas">
+                <h3>📝 Notițe Personale</h3>
+                <div class="note-paper">
+                    <textarea id="personalNotes" placeholder="Scrie aici notițe personale..."></textarea>
+                </div>
+            </section>
+
+            <div class="export-import">
+                <button id="exportBtn">💾 Export</button>
+                <button id="importBtn">📥 Import</button>
+            </div>
+
+           
+        </div>
+    </div>
+
+    <!-- JavaScript-ul tău -->
+    <script src="~/js/script.js" asp-append-version="true"></script>
+</body>
+</html>

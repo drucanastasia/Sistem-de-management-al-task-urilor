@@ -1,0 +1,32 @@
+D:\Project\Todo work\Task Management\Task Management\bin\Debug\net8.0\Task Management.staticwebassets.runtime.json
+D:\Project\Todo work\Task Management\Task Management\bin\Debug\net8.0\Task Management.staticwebassets.endpoints.json
+D:\Project\Todo work\Task Management\Task Management\bin\Debug\net8.0\Task Management.exe
+D:\Project\Todo work\Task Management\Task Management\bin\Debug\net8.0\Task Management.deps.json
+D:\Project\Todo work\Task Management\Task Management\bin\Debug\net8.0\Task Management.runtimeconfig.json
+D:\Project\Todo work\Task Management\Task Management\bin\Debug\net8.0\Task Management.dll
+D:\Project\Todo work\Task Management\Task Management\bin\Debug\net8.0\Task Management.pdb
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\Task Management.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\Task Management.AssemblyInfoInputs.cache
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\Task Management.AssemblyInfo.cs
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\Task Management.csproj.CoreCompileInputs.cache
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\Task Management.MvcApplicationPartsAssemblyInfo.cache
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\Task Management.RazorAssemblyInfo.cache
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\Task Management.RazorAssemblyInfo.cs
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\scopedcss\bundle\Task Management.styles.css
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\scopedcss\projectbundle\Task Management.bundle.scp.css
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\staticwebassets.build.json
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\staticwebassets.development.json
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\swae.build.ex.cache
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\Task Management.dll
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\refint\Task Management.dll
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\Task Management.pdb
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\Task Management.genruntimeconfig.cache
+D:\Project\Todo work\Task Management\Task Management\obj\Debug\net8.0\ref\Task Management.dll
