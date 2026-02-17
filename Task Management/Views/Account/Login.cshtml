@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Autentificare";
+    Layout = null; 
+}
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta chme="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/auth.css" />
+      
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Logare</h2>
+            <form method="post" asp-action="Login">
+                <input type="text" name="username" placeholder="Utilizator" required />
+                <input type="password" name="password" placeholder="Parolă" required />
+                <button type="submit">Intră</button>
+            </form>
+        </div>
+
+        <div class="auth-card">
+            <h2>Înregistrare</h2>
+            <form method="post" asp-action="Register">
+                <input type="text" name="username" placeholder="Utilizator" required />
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="password" name="password" placeholder="Parolă" required />
+                <button type="submit">Creează cont</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

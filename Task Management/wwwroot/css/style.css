@@ -1,0 +1,621 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    background-size: 400% 400%;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    color: #333;
+    padding: 20px;
+}
+
+.screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+/* === Titlu & Citat === */
+.title {
+    font-size: 64px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    margin: 30px 0 20px;
+    letter-spacing: -0.8px;
+}
+
+.quote {
+    font-size: 26px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.98);
+    max-width: 700px;
+    margin: 0 auto 50px;
+    line-height: 1.5;
+}
+
+/* === Meniul: 2 pe rand, mari, voluminoase === */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-bottom: 60px;
+    padding: 0 10px;
+}
+
+.cat-btn.big-btn {
+    background: white;
+    border: none;
+    border-radius: 20px;
+    padding: 32px 24px;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+    .cat-btn.big-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+        opacity: 0;
+        transition: opacity 0.4s;
+        z-index: -1;
+    }
+
+    .cat-btn.big-btn:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        background: white;
+    }
+
+        .cat-btn.big-btn:hover::before {
+            opacity: 1;
+        }
+
+    .cat-btn.big-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+.btn-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.btn-text {
+    font-size: 24px;
+    color: #2c3e50;
+    line-height: 1.3;
+}
+
+/* === Buton "Înapoi" === */
+.back-btn {
+    background: #7f8c8d;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+    .back-btn:hover {
+        background: #95a5a6;
+    }
+
+/* === Formular === */
+.form-section {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+    .form-section input {
+        flex: 1;
+        min-width: 320px;
+        padding: 20px 28px;
+        border-radius: 18px;
+        border: none;
+        font-size: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        color: #2c3e50;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    .form-section button {
+        padding: 20px 40px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 18px;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+    }
+
+        .form-section button:hover {
+            background: #45a049;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(76, 175, 80, 0.4);
+        }
+
+/* === Căutare === */
+.search-section {
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    padding: 14px 20px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 14px;
+    border: none;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* === Stages: 3 coloane pe un rând, fără bară === */
+.stages {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.stage {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    width: 360px;
+    flex-shrink: 0;
+}
+
+    .stage:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 28px 60px rgba(0,0,0,0.28);
+    }
+
+.stage-header {
+    padding: 24px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stage-icon {
+    font-size: 36px;
+}
+
+.stage h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.tasks-list {
+    padding: 28px;
+    min-height: 320px;
+    background: #f8fafd;
+}
+
+.task {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    border-left: 4px solid #6a11cb;
+    display: flex;
+    flex-direction: column;
+}
+
+    .task:hover {
+        transform: translateX(6px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        border-left-color: #2575fc;
+    }
+
+    .task.done {
+        background: #f0fff0;
+        border-left-color: #4caf50;
+    }
+
+.task-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.5;
+    word-break: break-word;
+    margin-bottom: 10px;
+}
+
+/* === Butonuri task === */
+.task-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.task-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+}
+
+    .task-btn:hover {
+        transform: scale(1.15);
+        background: white;
+    }
+
+    .task-btn.edit {
+        color: #ff9800;
+    }
+
+    .task-btn.delete {
+        color: #f44336;
+    }
+
+/* === Statistică === */
+.stats {
+    text-align: center;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.percent {
+    font-size: 48px;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    margin-top: 24px;
+}
+
+.stats-summary {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* === Export / Import === */
+.export-import {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+    .export-import button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+#exportBtn {
+    background: #2196F3;
+    color: white;
+}
+
+#importBtn {
+    background: #9C27B0;
+    color: white;
+}
+
+#exportBtn:hover {
+    background: #1976D2;
+}
+
+#importBtn:hover {
+    background: #7B1FA2;
+}
+
+/* === Notițe — foaie de caiet === */
+.notes-canvas {
+    background: #fff9e6;
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+    margin-bottom: 50px;
+}
+
+    .notes-canvas h3 {
+        color: #5d4037;
+        font-size: 32px;
+        margin-bottom: 24px;
+        font-weight: 800;
+    }
+
+.note-paper {
+    position: relative;
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.06);
+    overflow: hidden;
+    background-image: linear-gradient(rgba(200,200,200,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(200,200,200,0.4) 1px, transparent 1px);
+    background-size: 100% 32px, 32px 100%;
+    background-position: 0 0, 0 0;
+}
+
+#personalNotes {
+    width: 100%;
+    height: 220px;
+    padding: 24px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    color: #1a1a1a;
+    resize: none;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+}
+
+/* === Footer === */
+footer {
+    text-align: center;
+    padding: 24px;
+    color: rgba(255,255,255,0.85);
+    font-style: italic;
+    font-size: 20px;
+}
+
+/* === Responsiv === */
+@media (max-width: 1100px) {
+    .container {
+        max-width: 95%;
+    }
+
+    .stages {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stage {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 48px;
+    }
+
+    .quote {
+        font-size: 22px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section input {
+        min-width: 260px;
+    }
+
+    .stats {
+        margin-bottom: 40px;
+    }
+    .export-import select {
+        padding: 12px 16px;
+        border-radius: 10px;
+        border: 2px solid #ddd;
+        font-size: 16px;
+        background: white;
+        cursor: pointer;
+    }
+
+    .export-import button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 0 8px;
+    }
+}
+.top-right-profile {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    text-decoration: none;
+}
+
+    .top-right-profile:hover {
+        transform: scale(1.15);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+        align-items: center;
+        transform: none;
+        left: auto;
+    }
+}
+.sidebar {
+    width: 300px;
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    margin-left: 30px;
+}
+
+.xp-bar {
+    margin: 20px 0;
+    padding: 12px 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.xp-progress {
+    flex: 1;
+    height: 12px;
+    background: #e9ecef;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+    .xp-progress > div {
+        height: 100%;
+        background: linear-gradient(90deg, #4CAF50, #2196F3);
+        transition: width 0.6s ease-out; /* ← esențial pentru animație */
+        border-radius: 6px;
+    }
+
+.stage-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 24px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+}
+
+    .stage-header input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        accent-color: white;
+    }
+
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.payment-options {
+    display: flex;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.pay-btn {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+    .pay-btn:nth-child(1) {
+        background: #4CAF50;
+        color: white;
+    }
+
+    .pay-btn:nth-child(2) {
+        background: #2196F3;
+        color: white;
+    }
+
+    .pay-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+.close-popup {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 16px;
+}

@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Upgradează Contul</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #e91e63;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+            .feature:before {
+                content: "✅";
+                margin-right: 10px;
+                color: #4CAF50;
+                font-size: 18px;
+            }
+
+        .price {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            color: #e91e63;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔓 Deblochează funcționalitățile premium!</h1>
+
+        <div class="feature">Categorii personalizate</div>
+        <div class="feature">Calendar avansat</div>
+        <div class="feature">Notițe extinse</div>
+
+
+        <div class="price">Doar 10 lei / lună</div>
+
+        <form method="post" asp-action="ProcessPayment">
+            <button type="submit" class="btn">Plătește acum</button>
+        </form>
+
+        <div style="text-align:center; margin-top: 20px;">
+            <a href="/" style="color:#6a11cb; text-decoration: none;">← Înapoi la task-uri</a>
+        </div>
+    </div>
+</body>
+</html>
