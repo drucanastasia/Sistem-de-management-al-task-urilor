@@ -3,7 +3,10 @@
 public class AccountController : Controller
 {
 
-    public IActionResult Login() => View();
+    public IActionResult Login()
+    {
+        return View();
+    }
 
     // Procesare login
     [HttpPost]
@@ -22,7 +25,9 @@ public class AccountController : Controller
     }
 
     // Pagina de înregistrare
-    public IActionResult Register() => View();
+    public IActionResult Register() {
+        return View();
+    }
 
     // Procesare înregistrare
     [HttpPost]
