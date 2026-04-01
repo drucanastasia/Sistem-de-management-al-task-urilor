@@ -1,0 +1,234 @@
+﻿@model TaskManager.Models.CalendarViewModel
+
+@{
+    ViewData["Title"] = "Calendar";
+    Layout = "_Layout";
+}
+
+<div class="calendar-container">
+    <h1 class="calendar-title">📅 Calendarul Meu</h1>
+
+    @if (!Model.IsPremium)
+    {
+        <!-- Popup Plată -->
+        <div class="payment-popup" id="paymentPopup">
+            <div class="payment-content">
+                <h2>🔒 Calendar Premium</h2>
+                <p>Pentru a accesa calendarul, trebuie să devii membru premium.</p>
+
+                <div class="payment-options">
+                    <div class="payment-plan">
+                        <h3>Lunar</h3>
+                        <p class="price">10 RON/lună</p>
+                        <button class="pay-btn" onclick="upgradeToPremium('monthly')">
+                            Alege Lunar
+                        </button>
+                    </div>
+
+                    <div class="payment-plan featured">
+                        <span class="badge">Popular</span>
+                        <h3>Anual</h3>
+                        <p class="price">100 RON/an</p>
+                        <button class="pay-btn" onclick="upgradeToPremium('yearly')">
+                            Alege Anual
+                        </button>
+                    </div>
+                </div>
+
+                <button class="close-payment" onclick="closePaymentPopup()">
+                    Închide
+                </button>
+            </div>
+        </div>
+    }
+
+    <!-- Selector An -->
+    <div class="year-selector">
+        <button class="year-btn" onclick="changeYear(-1)">◀</button>
+        <h2 id="currentYearDisplay">@Model.CurrentYear</h2>
+        <button class="year-btn" onclick="changeYear(1)">▶</button>
+    </div>
+
+    <!-- Grid Luni -->
+    <div class="months-grid" id="monthsGrid">
+        <!-- Lunile vor fi generate dinamic prin JavaScript -->
+    </div>
+
+    <!-- Popup Lună (Zile) -->
+    <div class="month-popup" id="monthPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2 id="popupMonthTitle">Luna</h2>
+                <button class="close-popup" onclick="closeMonthPopup()">✖</button>
+            </div>
+
+            <div class="days-grid" id="daysGrid">
+                <!-- Zilele vor fi generate dinamic -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Editare Notiță -->
+    <div class="note-popup" id="notePopup">
+        <div class="note-content">
+            <h3 id="noteDateTitle">Data</h3>
+            <textarea id="dayNote" placeholder="Scrie notițele sau task-urile pentru această zi..." rows="6"></textarea>
+            <div class="note-actions">
+                <button class="save-note-btn" onclick="saveNote()">💾 Salvează</button>
+                <button class="cancel-note-btn" onclick="closeNotePopup()">Anulează</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        let currentYear = @Model.CurrentYear;
+        let selectedYear = currentYear;
+        let selectedMonth = null;
+        let selectedDay = null;
+        let isPremium = @Model.IsPremium.ToString().ToLower();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            if (isPremium) {
+                loadMonths(currentYear);
+            } else {
+                showPaymentPopup();
+            }
+        });
+
+        function loadMonths(year) {
+            fetch(`/Home/GetMonths?year=${year}`)
+                .then(response => response.json())
+                .then(months => {
+                    const grid = document.getElementById('monthsGrid');
+                    grid.innerHTML = '';
+
+                    months.forEach(month => {
+                        const monthCard = document.createElement('div');
+                        monthCard.className = 'month-card';
+                        monthCard.innerHTML = `
+                            <div class="month-icon">📆</div>
+                            <h3>${month.monthName}</h3>
+                            <p>${month.daysInMonth} zile</p>
+                        `;
+                        monthCard.onclick = () => openMonth(month.monthNumber, month.monthName);
+                        grid.appendChild(monthCard);
+                    });
+
+                    document.getElementById('currentYearDisplay').textContent = year;
+                });
+        }
+
+        function openMonth(monthNumber, monthName) {
+            selectedMonth = monthNumber;
+            document.getElementById('popupMonthTitle').textContent = `${monthName} ${selectedYear}`;
+
+            fetch(`/Home/GetDaysInMonth?year=${selectedYear}&month=${monthNumber}`)
+                .then(response => response.json())
+                .then(days => {
+                    const grid = document.getElementById('daysGrid');
+                    grid.innerHTML = '';
+
+                    const weekDays = ['Lun', 'Mar', 'Mie', 'Joi', 'Vin', 'Sâm', 'Dum'];
+                    weekDays.forEach(day => {
+                        const dayHeader = document.createElement('div');
+                        dayHeader.className = 'day-header';
+                        dayHeader.textContent = day;
+                        grid.appendChild(dayHeader);
+                    });
+
+                    days.forEach(day => {
+                        const dayCell = document.createElement('div');
+                        dayCell.className = `day-cell ${day.isWeekend ? 'weekend' : ''}`;
+                        dayCell.innerHTML = `
+                            <span class="day-number">${day.day}</span>
+                            <span class="day-add">+</span>
+                        `;
+                        dayCell.onclick = () => openNotePopup(day.date, day.day);
+                        grid.appendChild(dayCell);
+                    });
+
+                    document.getElementById('monthPopup').style.display = 'flex';
+                });
+        }
+
+        function openNotePopup(date, day) {
+            selectedDay = day;
+            document.getElementById('noteDateTitle').textContent = `${date}`;
+            document.getElementById('dayNote').value = '';
+            document.getElementById('notePopup').style.display = 'flex';
+        }
+
+        function saveNote() {
+            const note = document.getElementById('dayNote').value;
+
+            fetch('/Home/SaveDayNote', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `year=${selectedYear}&month=${selectedMonth}&day=${selectedDay}&note=${encodeURIComponent(note)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.message);
+                    closeNotePopup();
+                }
+            });
+        }
+
+        function upgradeToPremium(plan) {
+            fetch('/Home/UpgradeToPremium', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `plan=${plan}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    isPremium = true;
+                    closePaymentPopup();
+                    loadMonths(currentYear);
+                    alert('Felicitări! Ai acces acum la calendar!');
+                }
+            });
+        }
+
+        function changeYear(delta) {
+            selectedYear += delta;
+            if (isPremium) {
+                loadMonths(selectedYear);
+            }
+        }
+
+        function closeMonthPopup() {
+            document.getElementById('monthPopup').style.display = 'none';
+        }
+
+        function closeNotePopup() {
+            document.getElementById('notePopup').style.display = 'none';
+        }
+
+        function showPaymentPopup() {
+            document.getElementById('paymentPopup').style.display = 'flex';
+        }
+
+        function closePaymentPopup() {
+            document.getElementById('paymentPopup').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const monthPopup = document.getElementById('monthPopup');
+            const notePopup = document.getElementById('notePopup');
+            const paymentPopup = document.getElementById('paymentPopup');
+
+            if (event.target === monthPopup) closeMonthPopup();
+            if (event.target === notePopup) closeNotePopup();
+            if (event.target === paymentPopup) closePaymentPopup();
+        }
+    </script>
+}

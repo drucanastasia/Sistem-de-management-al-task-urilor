@@ -1,0 +1,224 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Task_Management\\Task_Management\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\creational\\abstractfactory\\travelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\creational\\abstractfactory\\travelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\creational\\abstractfactory\\workfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\creational\\abstractfactory\\workfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\creational\\abstractfactory\\itaskfamilyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\creational\\abstractfactory\\itaskfamilyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\creational\\abstractfactory\\taskfamilyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\creational\\abstractfactory\\taskfamilyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\creational\\abstractfactory\\personalfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\creational\\abstractfactory\\personalfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\creational\\abstractfactory\\universityfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\creational\\abstractfactory\\universityfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\creational\\factory\\taskfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\creational\\factory\\taskfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\models\\tasks\\personaltask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:models\\tasks\\personaltask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\models\\tasks\\traveltask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:models\\tasks\\traveltask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\models\\tasks\\worktask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:models\\tasks\\worktask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\models\\tasks\\universitytask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:models\\tasks\\universitytask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\models\\tasks\\taskbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:models\\tasks\\taskbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TaskFamilyFactory.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\AbstractFactory\\TaskFamilyFactory.cs",
+              "RelativeDocumentMoniker": "Patterns\\Creational\\AbstractFactory\\TaskFamilyFactory.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\AbstractFactory\\TaskFamilyFactory.cs",
+              "RelativeToolTip": "Patterns\\Creational\\AbstractFactory\\TaskFamilyFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T06:51:32.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PersonalFactory.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\AbstractFactory\\PersonalFactory.cs",
+              "RelativeDocumentMoniker": "Patterns\\Creational\\AbstractFactory\\PersonalFactory.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\AbstractFactory\\PersonalFactory.cs",
+              "RelativeToolTip": "Patterns\\Creational\\AbstractFactory\\PersonalFactory.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAIwCcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T06:49:18.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TravelFactory.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\AbstractFactory\\TravelFactory.cs",
+              "RelativeDocumentMoniker": "Patterns\\Creational\\AbstractFactory\\TravelFactory.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\AbstractFactory\\TravelFactory.cs",
+              "RelativeToolTip": "Patterns\\Creational\\AbstractFactory\\TravelFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T06:48:46.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WorkFactory.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\AbstractFactory\\WorkFactory.cs",
+              "RelativeDocumentMoniker": "Patterns\\Creational\\AbstractFactory\\WorkFactory.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\AbstractFactory\\WorkFactory.cs",
+              "RelativeToolTip": "Patterns\\Creational\\AbstractFactory\\WorkFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T06:48:23.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UniversityFactory.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\AbstractFactory\\UniversityFactory.cs",
+              "RelativeDocumentMoniker": "Patterns\\Creational\\AbstractFactory\\UniversityFactory.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\AbstractFactory\\UniversityFactory.cs",
+              "RelativeToolTip": "Patterns\\Creational\\AbstractFactory\\UniversityFactory.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowBYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T06:47:48.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ITaskFamilyFactory.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\AbstractFactory\\ITaskFamilyFactory.cs",
+              "RelativeDocumentMoniker": "Patterns\\Creational\\AbstractFactory\\ITaskFamilyFactory.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\AbstractFactory\\ITaskFamilyFactory.cs",
+              "RelativeToolTip": "Patterns\\Creational\\AbstractFactory\\ITaskFamilyFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T06:47:06.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TaskFactory.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\Factory\\TaskFactory.cs",
+              "RelativeDocumentMoniker": "Patterns\\Creational\\Factory\\TaskFactory.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Creational\\Factory\\TaskFactory.cs",
+              "RelativeToolTip": "Patterns\\Creational\\Factory\\TaskFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T06:46:13.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PersonalTask.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\Tasks\\PersonalTask.cs",
+              "RelativeDocumentMoniker": "Models\\Tasks\\PersonalTask.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Models\\Tasks\\PersonalTask.cs",
+              "RelativeToolTip": "Models\\Tasks\\PersonalTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T06:44:00.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TravelTask.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\Tasks\\TravelTask.cs",
+              "RelativeDocumentMoniker": "Models\\Tasks\\TravelTask.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Models\\Tasks\\TravelTask.cs",
+              "RelativeToolTip": "Models\\Tasks\\TravelTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T06:43:23.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WorkTask.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\Tasks\\WorkTask.cs",
+              "RelativeDocumentMoniker": "Models\\Tasks\\WorkTask.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Models\\Tasks\\WorkTask.cs",
+              "RelativeToolTip": "Models\\Tasks\\WorkTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T06:40:20.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UniversityTask.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\Tasks\\UniversityTask.cs",
+              "RelativeDocumentMoniker": "Models\\Tasks\\UniversityTask.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Models\\Tasks\\UniversityTask.cs",
+              "RelativeToolTip": "Models\\Tasks\\UniversityTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T06:39:11.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TaskBase.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\Tasks\\TaskBase.cs",
+              "RelativeDocumentMoniker": "Models\\Tasks\\TaskBase.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Models\\Tasks\\TaskBase.cs",
+              "RelativeToolTip": "Models\\Tasks\\TaskBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T06:38:26.858Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

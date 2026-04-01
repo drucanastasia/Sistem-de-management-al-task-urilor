@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Task Manager - Meniu";
+    Layout = "_Layout";
+}
+
+<div class="menu-container">
+    <h1 class="title">Task Manager</h1>
+    <p class="quote">"Planifică-ți ziua și ziua te va răsplăti"</p>
+
+    <div class="menu-grid">
+        <!-- Link-uri către paginile de task-uri pentru fiecare categorie -->
+        <a href="/Home/Tasks?category=university" class="cat-btn big-btn">
+            <span class="btn-icon">🎓</span>
+            <span class="btn-text">Universitate</span>
+        </a>
+
+        <a href="/Home/Tasks?category=work" class="cat-btn big-btn">
+            <span class="btn-icon">💼</span>
+            <span class="btn-text">Muncă</span>
+        </a>
+
+        <a href="/Home/Tasks?category=travel" class="cat-btn big-btn">
+            <span class="btn-icon">✈️</span>
+            <span class="btn-text">Travel</span>
+        </a>
+
+        <a href="/Home/Tasks?category=personal" class="cat-btn big-btn">
+            <span class="btn-icon">🏠</span>
+            <span class="btn-text">Personal</span>
+        </a>
+    </div>
+
+    <!-- Buton Calendar și Profil (opțional, dacă nu sunt în layout) -->
+    <div class="extra-links">
+        <a href="/Home/Calendar" class="extra-btn">📅 Calendar</a>
+        <a href="/Home/Profil" class="extra-btn">👤 Profil</a>
+    </div>
+
+    <footer>Druc Anastasia 2026</footer>
+</div>
