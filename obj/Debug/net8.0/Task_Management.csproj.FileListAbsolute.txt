@@ -139,3 +139,4 @@ D:\Task_Management\Task_Management\obj\Debug\net8.0\refint\Task_Management.dll
 D:\Task_Management\Task_Management\obj\Debug\net8.0\Task_Management.pdb
 D:\Task_Management\Task_Management\obj\Debug\net8.0\Task_Management.genruntimeconfig.cache
 D:\Task_Management\Task_Management\obj\Debug\net8.0\ref\Task_Management.dll
+D:\Task_Management\Task_Management\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

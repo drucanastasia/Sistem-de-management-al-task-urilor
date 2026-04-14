@@ -1,9 +1,6 @@
-wwwroot\css\auth.css
-wwwroot\css\site.css
 wwwroot\css\style.css
 wwwroot\favicon.ico
-wwwroot\js\script.js
-wwwroot\js\site.js
+wwwroot\js\app.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
