@@ -1,11 +1,8 @@
-﻿var builder = WebApplication.CreateBuilder(args);
-
-// Adaugă services
+var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -15,7 +12,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-app.UseAuthorization();
+// NU mai ai nevoie de UseAuthorization pentru localStorage auth
 
 app.MapControllerRoute(
     name: "default",
