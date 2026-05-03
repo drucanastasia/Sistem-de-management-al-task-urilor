@@ -3,7 +3,7 @@ namespace Task_Management.Patterns
 {
     public class Builder
     {
-        private TaskModel _task = new TaskModel();
+        private TaskItem _task = new TaskItem();
         public Builder SetTitle(string title)
         {
             _task.Title = title;
