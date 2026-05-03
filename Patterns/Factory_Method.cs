@@ -1,4 +1,5 @@
-﻿using Task_Management.Models;
+﻿using Task_Management.Enum;
+using Task_Management.Models;
 namespace Task_Management.Patterns
 {
     //Factory pentru taskuri
@@ -13,7 +14,7 @@ namespace Task_Management.Patterns
                 Title = title,
                 Category = category,
                 Description = description,
-                Status = "todo",
+                Status = TaskState.ToDo ,
                 XP = XP_task,
                 CreatedAt = DateTime.Now
             };

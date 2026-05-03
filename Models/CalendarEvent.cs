@@ -6,8 +6,8 @@
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
-        public string Color { get; set; } = "purple", "blue", "green", "amber", "red"; 
+        public string Color { get; set; } = "purple"; 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }
-}
+
