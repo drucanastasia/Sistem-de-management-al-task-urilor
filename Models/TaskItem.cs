@@ -7,8 +7,8 @@ namespace Task_Management.Models
     public string Title { get; set; }
     public string Description { get; set; }
     public string Category { get; set; } // work, travel, freetime, rest
-        public TaskState Status { get; set; } = TaskState.ToDo;
-    public int XP { get; set; } = 10; // Identic pentru toate
+        public string Status { get; set; } = "todo";
+        public int XP { get; set; } = 10; // Identic pentru toate
     public DateTime CreatedAt { get; set; } = DateTime.Now;
 }
 }

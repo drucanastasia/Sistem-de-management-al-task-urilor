@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "D:\\Task_Management\\Task_Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\builder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\builder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\prototype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\prototype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\factory_method.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\factory_method.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\prototype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\prototype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\builder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\builder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\abstract_factory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\abstract_factory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\interface\\taskfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:interface\\taskfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -89,7 +97,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -98,12 +106,76 @@
               "ViewState": "AgIAADAAAAAAAAAAAAAAAJIAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-05-02T09:38:39.489Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Factory_Method.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Factory_Method.cs",
+              "RelativeDocumentMoniker": "Patterns\\Factory_Method.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Factory_Method.cs",
+              "RelativeToolTip": "Patterns\\Factory_Method.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA9wCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T05:35:24.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Prototype.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Prototype.cs",
+              "RelativeDocumentMoniker": "Patterns\\Prototype.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Prototype.cs",
+              "RelativeToolTip": "Patterns\\Prototype.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAwwD4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T06:01:38.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Builder.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Builder.cs",
+              "RelativeDocumentMoniker": "Patterns\\Builder.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Builder.cs",
+              "RelativeToolTip": "Patterns\\Builder.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAQwCsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T18:15:15.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Abstract_Factory.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Abstract_Factory.cs",
+              "RelativeDocumentMoniker": "Patterns\\Abstract_Factory.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Abstract_Factory.cs",
+              "RelativeToolTip": "Patterns\\Abstract_Factory.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAgwG4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T06:31:42.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TaskFactory.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Interface\\TaskFactory.cs",
+              "RelativeDocumentMoniker": "Interface\\TaskFactory.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Interface\\TaskFactory.cs",
+              "RelativeToolTip": "Interface\\TaskFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T06:33:22.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "TaskItem.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\TaskItem.cs",
               "RelativeDocumentMoniker": "Models\\TaskItem.cs",
@@ -116,33 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Builder.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Builder.cs",
-              "RelativeDocumentMoniker": "Patterns\\Builder.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Builder.cs",
-              "RelativeToolTip": "Patterns\\Builder.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowBYAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T18:15:15.393Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Prototype.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Prototype.cs",
-              "RelativeDocumentMoniker": "Patterns\\Prototype.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Prototype.cs",
-              "RelativeToolTip": "Patterns\\Prototype.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T06:01:38.949Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -150,25 +196,11 @@
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T05:40:01.782Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-03T05:40:01.782Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Factory_Method.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Factory_Method.cs",
-              "RelativeDocumentMoniker": "Patterns\\Factory_Method.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Factory_Method.cs",
-              "RelativeToolTip": "Patterns\\Factory_Method.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T05:35:24.132Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "CalendarEvent.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\CalendarEvent.cs",
               "RelativeDocumentMoniker": "Models\\CalendarEvent.cs",
@@ -176,12 +208,11 @@
               "RelativeToolTip": "Models\\CalendarEvent.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T05:41:45.519Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-03T05:41:45.519Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "TaskState.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Enum\\TaskState.cs",
               "RelativeDocumentMoniker": "Enum\\TaskState.cs",
@@ -189,12 +220,11 @@
               "RelativeToolTip": "Enum\\TaskState.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T06:08:38.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-03T06:08:38.787Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Note.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\Note.cs",
               "RelativeDocumentMoniker": "Models\\Note.cs",
@@ -206,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "IPrototype.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Interface\\IPrototype.cs",
               "RelativeDocumentMoniker": "Interface\\IPrototype.cs",
@@ -214,12 +244,11 @@
               "RelativeToolTip": "Interface\\IPrototype.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T05:58:29.757Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-03T05:58:29.757Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Task_Management.csproj",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Task_Management.csproj",
               "RelativeDocumentMoniker": "Task_Management.csproj",
@@ -227,12 +256,11 @@
               "RelativeToolTip": "Task_Management.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-01T19:54:28.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T19:54:28.145Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
@@ -244,7 +272,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -256,7 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "app.js",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\wwwroot\\js\\app.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\app.js",
@@ -264,12 +292,11 @@
               "RelativeToolTip": "wwwroot\\js\\app.js",
               "ViewState": "AgIAAHECAAAAAAAAAAAYwLcCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-05-01T20:18:01.727Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T20:18:01.727Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "Auth.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Auth.cshtml",
               "ToolTip": "C:\\Users\\user\\Desktop\\Auth.cshtml",
@@ -279,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "style.css",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\style.css",
@@ -291,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -303,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -315,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",

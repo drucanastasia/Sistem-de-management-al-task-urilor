@@ -1,13 +1,12 @@
 ﻿using Task_Management.Models;
 using Task_Management.Interface;
-using Task_Management.Enum;
 namespace Task_Management.Patterns
 {
     public class TaskTemplate : IPrototype<TaskItem>
     {
-        public string Name { get; set; }
-        public string Category { get; set; }
-        public string DefaultDescription { get; set; }
+        public required string Name { get; set; }
+        public required string Category { get; set; }
+        public required string DefaultDescription { get; set; }
 
         public TaskItem Clone()
         {
@@ -17,7 +16,7 @@ namespace Task_Management.Patterns
                 Title = this.Name,
                 Category = this.Category,
                 Description = this.DefaultDescription,
-                Status = TaskState.ToDo,
+                Status = "todo",
                 XP = 10,
                 CreatedAt = DateTime.Now
             };
@@ -40,6 +39,29 @@ namespace Task_Management.Patterns
                 return template.Clone();
             }
             return null;
+        }
+            public void LoadDefaults()
+        {
+            AddTemplate("work_meeting", new TaskTemplate
+            {
+                Name = "Meeting echipă",
+                Category = "work",
+                DefaultDescription = "Meeting săptămânal"
+            });
+
+            AddTemplate("travel_booking", new TaskTemplate
+            {
+                Name = "Rezervare bilet",
+                Category = "travel",
+                DefaultDescription = "Rezervare transport/cazare"
+            });
+
+            AddTemplate("workout", new TaskTemplate
+            {
+                Name = "Sală",
+                Category = "freetime",
+                DefaultDescription = "30 minute antrenament"
+            });
         }
     }
 }

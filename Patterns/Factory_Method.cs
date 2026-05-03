@@ -1,4 +1,4 @@
-﻿using Task_Management.Enum;
+﻿
 using Task_Management.Models;
 namespace Task_Management.Patterns
 {
@@ -14,7 +14,7 @@ namespace Task_Management.Patterns
                 Title = title,
                 Category = category,
                 Description = description,
-                Status = TaskState.ToDo ,
+                Status = "todo" ,
                 XP = XP_task,
                 CreatedAt = DateTime.Now
             };

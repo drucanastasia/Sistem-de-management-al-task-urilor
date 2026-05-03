@@ -26,7 +26,7 @@ namespace Task_Management.Patterns
 
         public TaskItemBuilder SetStatus(string status)
         {
-            _task.Status = TaskState.ToDo;
+            _task.Status = "todo";
             return this;
         }
 
