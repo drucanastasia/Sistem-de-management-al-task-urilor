@@ -37,6 +37,15 @@
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="3" x2="13" y2="13"/><line x1="13" y1="3" x2="3" y2="13"/></svg>
       </button>
     </div>
+    <div class="form-group" id="templateRow">
+      <label class="form-label">Șablon rapid</label>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTemplate('work_meeting')">💼 Meeting</button>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTemplate('travel_booking')">✈️ Rezervare</button>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTemplate('workout')">🎯 Sală</button>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTemplate('rest_break')">😌 Pauză</button>
+      </div>
+    </div>
     <div class="form-group">
       <label class="form-label">Titlu task *</label>
       <input class="form-input" id="taskTitle" placeholder="Ex: Pregătit prezentare..." maxlength="100">

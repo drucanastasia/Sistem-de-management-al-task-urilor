@@ -57,7 +57,7 @@ namespace Task_Management.Patterns
                 return new TaskItem
                 {
                     Id = Guid.NewGuid().ToString(),
-                    Title = $"🎯 {title}",
+                    Title = $" {title}",
                     Category = "freetime",
                     Description = description,
                     Status = "todo",

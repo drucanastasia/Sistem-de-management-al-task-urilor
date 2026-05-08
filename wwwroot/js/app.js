@@ -1,5 +1,435 @@
-﻿
-// ===================== STATE =====================
+// ============================================================
+//  TaskManagement — app.js cu Design Patterns
+//  Patterns: Abstract Factory, Factory Method, Builder,
+//            Prototype, State, Strategy, Decorator, Adapter, Facade
+// ============================================================
+
+// ===================== ABSTRACT FACTORY =====================
+// Fiecare categorie are propria factory cu XP bonus diferit
+
+class WorkTaskFactory {
+  get categoryName() { return 'munca'; }
+  getXPBonus() { return 5; }
+  createTask(title, description = '') {
+    return {
+      id: uid(),
+      title,
+      desc: description,
+      cat: 'munca',
+      status: 'todo',
+      xp: 10 + this.getXPBonus(),
+      createdAt: Date.now(),
+      completedAt: null
+    };
+  }
+}
+
+class TravelTaskFactory {
+  get categoryName() { return 'travel'; }
+  getXPBonus() { return 3; }
+  createTask(title, description = '') {
+    return {
+      id: uid(),
+      title,
+      desc: description,
+      cat: 'travel',
+      status: 'todo',
+      xp: 10 + this.getXPBonus(),
+      createdAt: Date.now(),
+      completedAt: null
+    };
+  }
+}
+
+class FreeTimeTaskFactory {
+  get categoryName() { return 'timp'; }
+  getXPBonus() { return 0; }
+  createTask(title, description = '') {
+    return {
+      id: uid(),
+      title,
+      desc: description,
+      cat: 'timp',
+      status: 'todo',
+      xp: 10,
+      createdAt: Date.now(),
+      completedAt: null
+    };
+  }
+}
+
+class RestTaskFactory {
+  get categoryName() { return 'rest'; }
+  getXPBonus() { return 0; }
+  createTask(title, description = '') {
+    return {
+      id: uid(),
+      title,
+      desc: description,
+      cat: 'rest',
+      status: 'todo',
+      xp: 10,
+      createdAt: Date.now(),
+      completedAt: null
+    };
+  }
+}
+
+// Factory Producer — alege factory-ul corect după categorie
+class TaskCategoryFactoryProducer {
+  static getFactory(category) {
+    switch (category) {
+      case 'munca':  return new WorkTaskFactory();
+      case 'travel': return new TravelTaskFactory();
+      case 'timp':   return new FreeTimeTaskFactory();
+      case 'rest':   return new RestTaskFactory();
+      default:       return new FreeTimeTaskFactory();
+    }
+  }
+}
+
+// ===================== FACTORY METHOD =====================
+// Factory simplu pentru Calendar Events
+
+class Factory_Method {
+  static createEvent(title, dateStr, color) {
+    return {
+      id: uid(),
+      title,
+      date: dateStr,
+      color,
+      createdAt: Date.now()
+    };
+  }
+}
+
+// ===================== BUILDER =====================
+// Builder pentru task-uri cu câmpuri opționale
+
+class TaskItemBuilder {
+  constructor() {
+    this._task = {
+      id: uid(),
+      title: '',
+      desc: '',
+      cat: 'timp',
+      status: 'todo',
+      xp: 10,
+      createdAt: Date.now(),
+      completedAt: null
+    };
+  }
+  setTitle(title)       { this._task.title = title;       return this; }
+  setCategory(cat)      { this._task.cat = cat;           return this; }
+  setDescription(desc)  { this._task.desc = desc;         return this; }
+  setStatus(status)     { this._task.status = status;     return this; }
+  setXP(xp)             { this._task.xp = xp;             return this; }
+  build()               { return { ...this._task }; }
+}
+
+// ===================== PROTOTYPE =====================
+// Template-uri predefinite care pot fi clonate
+
+class TaskTemplate {
+  constructor(name, category, defaultDescription) {
+    this.name = name;
+    this.category = category;
+    this.defaultDescription = defaultDescription;
+  }
+  clone() {
+    return new TaskItemBuilder()
+      .setTitle(this.name)
+      .setCategory(this.category)
+      .setDescription(this.defaultDescription)
+      .build();
+  }
+}
+
+class TemplateManager {
+  constructor() {
+    this._templates = {};
+  }
+  addTemplate(key, template) {
+    this._templates[key] = template;
+  }
+  createFromTemplate(key) {
+    const t = this._templates[key];
+    return t ? t.clone() : null;
+  }
+  getAll() {
+    return Object.entries(this._templates).map(([key, t]) => ({
+      key,
+      name: t.name,
+      category: t.category,
+      desc: t.defaultDescription
+    }));
+  }
+  loadDefaults() {
+    this.addTemplate('work_meeting', new TaskTemplate('Meeting echipă', 'munca', 'Meeting săptămânal cu echipa'));
+    this.addTemplate('travel_booking', new TaskTemplate('Rezervare bilet', 'travel', 'Rezervare transport/cazare'));
+    this.addTemplate('workout', new TaskTemplate('Sală', 'timp', '30 minute antrenament'));
+    this.addTemplate('rest_break', new TaskTemplate('Pauză', 'rest', 'Pauză de 15 minute'));
+  }
+}
+
+const templateManager = new TemplateManager();
+templateManager.loadDefaults();
+
+// ===================== STATE PATTERN =====================
+// Stările unui task: ToDo → InProgress → Done (și înapoi)
+
+class ToDoState {
+  get statusName() { return 'todo'; }
+  moveToNext(ctx)     { ctx.setState(new InProgressState()); }
+  moveToPrevious(ctx) { /* nu face nimic, e primul */ }
+}
+
+class InProgressState {
+  get statusName() { return 'prog'; }
+  moveToNext(ctx)     { ctx.setState(new DoneState()); }
+  moveToPrevious(ctx) { ctx.setState(new ToDoState()); }
+}
+
+class DoneState {
+  get statusName() { return 'done'; }
+  moveToNext(ctx)     { /* nu face nimic, e ultimul */ }
+  moveToPrevious(ctx) { ctx.setState(new InProgressState()); }
+}
+
+class TaskContext {
+  constructor(task) {
+    this._task = task;
+    // Setăm starea inițială în funcție de statusul existent al taskului
+    this._state = TaskContext._stateFromStatus(task.status);
+  }
+  static _stateFromStatus(status) {
+    if (status === 'prog') return new InProgressState();
+    if (status === 'done') return new DoneState();
+    return new ToDoState();
+  }
+  setState(state) {
+    this._state = state;
+    this._task.status = state.statusName;
+  }
+  getStatus()  { return this._state.statusName; }
+  next()       { this._state.moveToNext(this); }
+  previous()   { this._state.moveToPrevious(this); }
+}
+
+// ===================== STRATEGY PATTERN =====================
+// Strategii diferite de export
+
+class JSONExportStrategy {
+  get fileExtension() { return '.json'; }
+  get contentType()   { return 'application/json'; }
+  export(user) {
+    const data = {
+      username: user.username,
+      level: user.level,
+      xp: user.xp,
+      tasks: user.tasks,
+      notes: user.notes,
+      calEvents: user.calEvents,
+      exportedAt: new Date().toISOString()
+    };
+    return JSON.stringify(data, null, 2);
+  }
+}
+
+class TXTExportStrategy {
+  get fileExtension() { return '.txt'; }
+  get contentType()   { return 'text/plain'; }
+  export(user) {
+    let txt = `TaskManagement Export — ${new Date().toLocaleDateString('ro-RO')}\n`;
+    txt += `Utilizator: ${user.username}\nNivel: ${user.level} | XP: ${user.xp}\n${'─'.repeat(40)}\n\n`;
+    ['todo', 'prog', 'done'].forEach(s => {
+      const label = s === 'todo' ? 'TO DO' : s === 'prog' ? 'IN PROGRESS' : 'DONE';
+      txt += `[${label}]\n`;
+      user.tasks.filter(t => t.status === s).forEach(t => {
+        txt += `  • ${t.title} (${CAT_LABELS[t.cat]}) +${t.xp || 10} XP\n`;
+        if (t.desc) txt += `    ${t.desc}\n`;
+      });
+      txt += '\n';
+    });
+    if (user.notes && user.notes.length) {
+      txt += `[NOTIȚE]\n`;
+      user.notes.forEach(n => { txt += `  • ${n.content.slice(0, 80)}\n`; });
+    }
+    return txt;
+  }
+}
+
+class CSVExportStrategy {
+  get fileExtension() { return '.csv'; }
+  get contentType()   { return 'text/csv'; }
+  export(user) {
+    let csv = 'Type,Title,Category,Status,XP,Date\n';
+    user.tasks.forEach(t => {
+      csv += `Task,"${t.title}",${t.cat},${t.status},${t.xp || 10},${new Date(t.createdAt).toISOString().split('T')[0]}\n`;
+    });
+    (user.calEvents || []).forEach(ev => {
+      csv += `Event,"${ev.title}",${ev.color},,0,${ev.date}\n`;
+    });
+    return csv;
+  }
+}
+
+// Exportor — primește o strategie și o execută
+class ExportContext {
+  constructor(strategy) { this._strategy = strategy; }
+  setStrategy(strategy) { this._strategy = strategy; }
+  execute(user) {
+    return {
+      content: this._strategy.export(user),
+      extension: this._strategy.fileExtension,
+      contentType: this._strategy.contentType
+    };
+  }
+}
+
+// ===================== DECORATOR PATTERN =====================
+// Decorăm Calendar Events cu tip/culoare/prefix la titlu
+
+class CalendarEventBase {
+  constructor(data) { this._data = data; }
+  getTitle()       { return this._data.title; }
+  getColor()       { return this._data.color; }
+  getDescription() { return this._data.description || ''; }
+  getData()        { return this._data; }
+}
+
+class EventDecorator {
+  constructor(event) { this._event = event; }
+  getTitle()       { return this._event.getTitle(); }
+  getColor()       { return this._event.getColor(); }
+  getDescription() { return this._event.getDescription(); }
+  getData()        { return this._event.getData(); }
+}
+
+class UrgentEventDecorator extends EventDecorator {
+  getTitle() { return `[URGENT] ${this._event.getTitle()}`; }
+  getColor() { return 'red'; }
+}
+
+class WorkEventDecorator extends EventDecorator {
+  getTitle() { return `💼 ${this._event.getTitle()}`; }
+  getColor() { return 'blue'; }
+}
+
+class RelaxEventDecorator extends EventDecorator {
+  getTitle() { return `😌 ${this._event.getTitle()}`; }
+  getColor() { return 'green'; }
+}
+
+class HolidayEventDecorator extends EventDecorator {
+  getTitle() { return `🌴 ${this._event.getTitle()}`; }
+  getColor() { return 'yellow'; }
+}
+
+class PersonalEventDecorator extends EventDecorator {
+  getTitle() { return `✨ ${this._event.getTitle()}`; }
+  getColor() { return 'purple'; }
+}
+
+// Alege decoratorul potrivit după culoarea selectată
+function applyEventDecorator(baseEvent, color) {
+  switch (color) {
+    case 'red':    return new UrgentEventDecorator(baseEvent);
+    case 'blue':   return new WorkEventDecorator(baseEvent);
+    case 'green':  return new RelaxEventDecorator(baseEvent);
+    case 'yellow': return new HolidayEventDecorator(baseEvent);
+    case 'purple':
+    default:       return new PersonalEventDecorator(baseEvent);
+  }
+}
+
+// ===================== ADAPTER PATTERN =====================
+// Adaptoare pentru citire/scriere fișiere (folosite de export)
+
+class JSONFileAdapter {
+  get extension() { return '.json'; }
+  serialize(content) { return content; } // deja string JSON
+  deserialize(content) { return JSON.parse(content); }
+}
+
+class TXTFileAdapter {
+  get extension() { return '.txt'; }
+  serialize(content) { return content; }
+  deserialize(content) { return content; }
+}
+
+class CSVFileAdapter {
+  get extension() { return '.csv'; }
+  serialize(content) { return content; }
+  deserialize(content) { return content; }
+}
+
+// ===================== FACADE =====================
+// TaskFacade — punct unic de intrare pentru operațiile principale
+
+class TaskFacade {
+  constructor() {
+    this._templateManager = templateManager;
+  }
+
+  // Creează task via Abstract Factory (XP diferit per categorie)
+  createTask(title, category, description = '') {
+    const factory = TaskCategoryFactoryProducer.getFactory(category);
+    return factory.createTask(title, description);
+  }
+
+  // Creează task via Builder (pentru cazuri cu câmpuri custom)
+  createTaskWithBuilder(title, category, description, xp) {
+    return new TaskItemBuilder()
+      .setTitle(title)
+      .setCategory(category)
+      .setDescription(description)
+      .setXP(xp)
+      .build();
+  }
+
+  // Creează task din template (Prototype)
+  createFromTemplate(key) {
+    return this._templateManager.createFromTemplate(key);
+  }
+
+  // Schimbă starea unui task via State pattern
+  moveTaskState(task, direction) {
+    const ctx = new TaskContext(task);
+    if (direction === 'next') ctx.next();
+    else ctx.previous();
+    return task.status; // task.status e modificat in-place de TaskContext
+  }
+
+  // Export via Strategy
+  exportUser(user, format) {
+    let strategy;
+    switch (format) {
+      case 'txt': strategy = new TXTExportStrategy(); break;
+      case 'csv': strategy = new CSVExportStrategy(); break;
+      default:    strategy = new JSONExportStrategy(); break;
+    }
+    const ctx = new ExportContext(strategy);
+    return ctx.execute(user);
+  }
+
+  // Creează eveniment cu Decorator aplicat
+  createDecoratedEvent(title, dateStr, color) {
+    const rawEvent = Factory_Method.createEvent(title, dateStr, color);
+    const base = new CalendarEventBase(rawEvent);
+    const decorated = applyEventDecorator(base, color);
+    // Returnăm obiectul raw dar cu titlul/culoarea decorată
+    return {
+      ...rawEvent,
+      title: decorated.getTitle(),
+      color: decorated.getColor()
+    };
+  }
+}
+
+const facade = new TaskFacade();
+
+// ===================== STATE (localStorage) =====================
 const DB_KEY = 'taskmanagement_db';
 
 function getDB() {
@@ -9,8 +439,7 @@ function getDB() {
 function saveDB(db) { localStorage.setItem(DB_KEY, JSON.stringify(db)); }
 
 function getUser(username) {
-  const db = getDB();
-  return db.users.find(u => u.username === username);
+  return getDB().users.find(u => u.username === username);
 }
 
 function getCurrentUser() {
@@ -74,10 +503,10 @@ function doRegister() {
   err.style.display = 'none';
   const user = freshUser(username, first, last);
   user.password = btoa(pass);
-  // demo tasks
+  // Demo tasks — create via Facade (Abstract Factory)
   user.tasks = [
-    { id: uid(), title: 'Bun venit în TaskMangement! 🎉', desc: 'Acesta este primul tău task. Poți să îl muți în Progress sau Done.', cat: 'timp', status: 'todo', createdAt: Date.now(), completedAt: null },
-    { id: uid(), title: 'Explorează toate funcțiile', desc: 'Calendar, Notițe, Export, Temă dark...', cat: 'munca', status: 'todo', createdAt: Date.now(), completedAt: null },
+    facade.createTask('Bun venit în TaskManagement! 🎉', 'timp', 'Acesta este primul tău task. Poți să îl muți în Progress sau Done.'),
+    facade.createTask('Explorează toate funcțiile', 'munca', 'Calendar, Notițe, Export CSV/JSON/TXT, Temă dark, Șabloane...'),
   ];
   saveUser(user);
   sessionStorage.setItem('tm_user', username);
@@ -108,8 +537,7 @@ function uid() { return Date.now().toString(36) + Math.random().toString(36).sli
 function loadApp() {
   const user = getCurrentUser();
   if (!user) return;
-  // Sidebar user info
-  const initials = ((user.firstName[0]||'') + (user.lastName[0]||user.username[0]||'')).toUpperCase() || 'U';
+  const initials = ((user.firstName[0] || '') + (user.lastName[0] || user.username[0] || '')).toUpperCase() || 'U';
   const displayName = (user.firstName && user.lastName) ? user.firstName + ' ' + user.lastName : user.username;
   document.getElementById('sidebarAvatar').textContent = initials;
   document.getElementById('sidebarName').textContent = displayName;
@@ -138,7 +566,6 @@ function updateXpUI(user) {
 }
 
 function xpForLevel(lvl) {
-  // Level 1: 0xp, each level needs lvl*50 xp
   let total = 0;
   for (let i = 1; i < lvl; i++) total += i * 50;
   return total;
@@ -156,10 +583,10 @@ function navigate(page) {
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
   document.getElementById('nav-' + page).classList.add('active');
-  if (page === 'tasks') renderTasks();
+  if (page === 'tasks')    renderTasks();
   if (page === 'calendar') renderCalendar();
-  if (page === 'notes') renderNotes();
-  if (page === 'profile') renderProfile();
+  if (page === 'notes')    renderNotes();
+  if (page === 'profile')  renderProfile();
 }
 
 // ===================== TASKS =====================
@@ -175,6 +602,17 @@ function openAddTask() {
   document.getElementById('taskStatus').value = 'todo';
   openModal('taskModal');
   setTimeout(() => document.getElementById('taskTitle').focus(), 200);
+}
+
+// Aplică un template în modalul deschis (Prototype)
+function applyTemplate(key) {
+  const task = facade.createFromTemplate(key);
+  if (!task) return;
+  document.getElementById('taskTitle').value = task.title;
+  document.getElementById('taskDesc').value = task.desc || '';
+  document.getElementById('taskCategory').value = task.cat;
+  document.getElementById('taskStatus').value = 'todo';
+  document.getElementById('taskTitle').focus();
 }
 
 function openEditTask(id) {
@@ -205,19 +643,29 @@ function saveTask() {
     if (task) {
       const wasNotDone = task.status !== 'done';
       const isNowDone = status === 'done';
-      task.title = title; task.desc = desc; task.cat = cat;
+      task.title = title;
+      task.desc = desc;
+      task.cat = cat;
       if (wasNotDone && isNowDone) {
-        task.status = 'done';
+        // Folosim State pattern pentru tranziție
+        const ctx = new TaskContext(task);
+        while (ctx.getStatus() !== 'done') ctx.next();
         task.completedAt = Date.now();
-        const res = awardXp(user, 10);
+        const res = awardXp(user, task.xp || 10);
         leveledUp = res.leveledUp;
       } else {
         task.status = status;
       }
     }
   } else {
-    const task = { id: uid(), title, desc, cat, status, createdAt: Date.now(), completedAt: null };
-    if (status === 'done') { task.completedAt = Date.now(); const r = awardXp(user, 10); leveledUp = r.leveledUp; }
+    // Creare via Facade → Abstract Factory (XP diferit per categorie)
+    const task = facade.createTask(title, cat, desc);
+    task.status = status;
+    if (status === 'done') {
+      task.completedAt = Date.now();
+      const r = awardXp(user, task.xp || 10);
+      leveledUp = r.leveledUp;
+    }
     user.tasks.push(task);
   }
 
@@ -226,8 +674,12 @@ function saveTask() {
   closeModal('taskModal');
   renderTasks();
 
-  if (status === 'done' || (editingTaskId && document.getElementById('taskStatus').value === 'done')) {
-    showToast(leveledUp ? '🎉 Nivel nou: ' + user.level + '! +10 XP câștigat!' : '✅ Task finalizat! +10 XP', leveledUp ? 'level' : 'success');
+  const finalStatus = editingTaskId
+    ? user.tasks.find(t => t.id === editingTaskId)?.status
+    : status;
+
+  if (finalStatus === 'done') {
+    showToast(leveledUp ? '🎉 Nivel nou: ' + user.level + '! +' + (editingTaskId ? '' : '') + 'XP câștigat!' : '✅ Task finalizat! XP câștigat!', leveledUp ? 'level' : 'success');
   } else {
     showToast(editingTaskId ? '✏️ Task actualizat!' : '➕ Task adăugat!', 'success');
   }
@@ -241,21 +693,32 @@ function awardXp(user, amount) {
   return { leveledUp };
 }
 
-function moveTask(id, toStatus) {
+// moveTask folosește State Pattern pentru tranziții
+function moveTask(id, direction) {
   const user = getCurrentUser();
   const task = user.tasks.find(t => t.id === id);
   if (!task) return;
   let leveledUp = false;
-  if (toStatus === 'done' && task.status !== 'done') {
+  const oldStatus = task.status;
+
+  // Folosim Facade care intern folosește State pattern
+  facade.moveTaskState(task, direction);
+
+  if (task.status === 'done' && oldStatus !== 'done') {
     task.completedAt = Date.now();
-    const r = awardXp(user, 10);
+    const r = awardXp(user, task.xp || 10);
     leveledUp = r.leveledUp;
   }
-  task.status = toStatus;
+  if (task.status !== 'done') {
+    task.completedAt = null;
+  }
+
   saveUser(user);
   updateXpUI(user);
   renderTasks();
-  if (toStatus === 'done') showToast(leveledUp ? '🎉 Nivel nou: ' + user.level + '! +10 XP!' : '✅ Task finalizat! +10 XP', leveledUp ? 'level' : 'success');
+  if (task.status === 'done') {
+    showToast(leveledUp ? '🎉 Nivel nou: ' + user.level + '! +' + (task.xp || 10) + ' XP!' : '✅ Task finalizat! +' + (task.xp || 10) + ' XP', leveledUp ? 'level' : 'success');
+  }
 }
 
 function deleteTask(id) {
@@ -284,7 +747,7 @@ function renderTasks(searchQ = '') {
   if (!user) return;
   let tasks = user.tasks;
   if (currentFilter !== 'all') tasks = tasks.filter(t => t.cat === currentFilter);
-  if (searchQ) tasks = tasks.filter(t => t.title.toLowerCase().includes(searchQ) || (t.desc||'').toLowerCase().includes(searchQ));
+  if (searchQ) tasks = tasks.filter(t => t.title.toLowerCase().includes(searchQ) || (t.desc || '').toLowerCase().includes(searchQ));
 
   const todo = tasks.filter(t => t.status === 'todo');
   const prog = tasks.filter(t => t.status === 'prog');
@@ -323,11 +786,17 @@ const CAT_LABELS = { munca: '💼 Muncă', travel: '✈️ Travel', timp: '🎯 
 
 function taskCardHTML(t, status) {
   const isDone = status === 'done';
+  const xpAmount = t.xp || 10;
+  const xpEl = isDone
+    ? `<span class="xp-tag earned">✓ +${xpAmount} XP</span>`
+    : `<span class="xp-tag">+${xpAmount} XP</span>`;
+
+  // Butoane bazate pe State pattern — next/previous
+  const canGoNext = status !== 'done';
+  const canGoPrev = status !== 'todo';
   const nextLabel = status === 'todo' ? '→ Progress' : status === 'prog' ? '→ Done' : null;
   const prevLabel = status === 'done' ? '← Progress' : status === 'prog' ? '← To Do' : null;
-  const xpEl = isDone
-    ? `<span class="xp-tag earned">✓ +10 XP</span>`
-    : `<span class="xp-tag">+10 XP</span>`;
+
   return `
     <div class="task-card ${isDone ? 'done-card' : ''}"
          draggable="true"
@@ -336,13 +805,13 @@ function taskCardHTML(t, status) {
       <div class="task-name ${isDone ? 'striked' : ''}">${escHtml(t.title)}</div>
       ${t.desc ? `<div class="task-desc">${escHtml(t.desc)}</div>` : ''}
       <div class="task-footer">
-        <span class="tag ${t.cat}">${CAT_LABELS[t.cat]||t.cat}</span>
+        <span class="tag ${t.cat}">${CAT_LABELS[t.cat] || t.cat}</span>
         ${xpEl}
       </div>
       <div class="task-actions">
         ${!isDone ? `<button class="btn btn-secondary btn-sm" onclick="openEditTask('${t.id}')">✏️ Editează</button>` : ''}
-        ${nextLabel ? `<button class="btn btn-primary btn-sm" onclick="moveTask('${t.id}','${status==='todo'?'prog':'done'}')">${nextLabel}</button>` : ''}
-        ${prevLabel ? `<button class="btn btn-secondary btn-sm" onclick="moveTask('${t.id}','${status==='done'?'prog':'todo'}')">${prevLabel}</button>` : ''}
+        ${canGoNext && nextLabel ? `<button class="btn btn-primary btn-sm" onclick="moveTask('${t.id}','next')">${nextLabel}</button>` : ''}
+        ${canGoPrev && prevLabel ? `<button class="btn btn-secondary btn-sm" onclick="moveTask('${t.id}','previous')">${prevLabel}</button>` : ''}
         <button class="btn btn-danger btn-sm" onclick="deleteTask('${t.id}')">🗑️</button>
       </div>
     </div>`;
@@ -370,7 +839,30 @@ function dragLeave(e) {
 function drop(e, col) {
   e.preventDefault();
   document.querySelectorAll('.kanban-col').forEach(c => c.classList.remove('drag-over'));
-  if (dragId) { moveTask(dragId, col); dragId = null; }
+  if (!dragId) return;
+  const user = getCurrentUser();
+  const task = user.tasks.find(t => t.id === dragId);
+  if (task && task.status !== col) {
+    // Drag & drop folosește State pentru a ajunge la statusul țintă
+    const ctx = new TaskContext(task);
+    let iterations = 0;
+    while (ctx.getStatus() !== col && iterations < 5) {
+      if (col === 'done' || (col === 'prog' && ctx.getStatus() === 'todo')) ctx.next();
+      else ctx.previous();
+      iterations++;
+    }
+    if (task.status === 'done' && task.completedAt === null) {
+      task.completedAt = Date.now();
+      const r = awardXp(user, task.xp || 10);
+      if (r.leveledUp) showToast('🎉 Nivel nou: ' + user.level + '!', 'level');
+      else showToast('✅ Task finalizat! +' + (task.xp || 10) + ' XP', 'success');
+    }
+    if (task.status !== 'done') task.completedAt = null;
+    saveUser(user);
+    updateXpUI(user);
+    renderTasks();
+  }
+  dragId = null;
 }
 
 // ===================== CALENDAR =====================
@@ -384,17 +876,19 @@ function openCalModal(dateStr) {
   setTimeout(() => document.getElementById('calTitle').focus(), 200);
 }
 
+// saveCalEvent folosește Factory Method + Decorator
 function saveCalEvent() {
   const title = document.getElementById('calTitle').value.trim();
   if (!title) { document.getElementById('calTitle').focus(); return; }
   const user = getCurrentUser();
   user.calEvents = user.calEvents || [];
-  user.calEvents.push({
-    id: uid(),
-    title,
-    date: document.getElementById('calDate').value,
-    color: document.getElementById('calColor').value
-  });
+  const color = document.getElementById('calColor').value;
+  const dateStr = document.getElementById('calDate').value;
+
+  // Facade → Factory Method → Decorator aplicat
+  const decoratedEvent = facade.createDecoratedEvent(title, dateStr, color);
+
+  user.calEvents.push(decoratedEvent);
   saveUser(user);
   closeModal('calModal');
   renderCalendar();
@@ -411,8 +905,8 @@ function deleteCalEvent(id) {
   });
 }
 
-const MONTHS_RO = ['Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie','Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie'];
-const DAYS_RO = ['Lu','Ma','Mi','Jo','Vi','Sa','Du'];
+const MONTHS_RO = ['Ianuarie', 'Februarie', 'Martie', 'Aprilie', 'Mai', 'Iunie', 'Iulie', 'August', 'Septembrie', 'Octombrie', 'Noiembrie', 'Decembrie'];
+const DAYS_RO = ['Lu', 'Ma', 'Mi', 'Jo', 'Vi', 'Sa', 'Du'];
 
 function renderCalendar() {
   const now = new Date();
@@ -424,19 +918,16 @@ function renderCalendar() {
   const eventsByDate = {};
   events.forEach(e => { if (!eventsByDate[e.date]) eventsByDate[e.date] = []; eventsByDate[e.date].push(e); });
 
-  // Grid header
   const first = new Date(calYear, calMonth, 1);
   const lastDay = new Date(calYear, calMonth + 1, 0).getDate();
-  let startDow = first.getDay(); // 0=Sun
-  startDow = startDow === 0 ? 6 : startDow - 1; // Mon=0
+  let startDow = first.getDay();
+  startDow = startDow === 0 ? 6 : startDow - 1;
 
   let html = DAYS_RO.map(d => `<div class="cal-day-name">${d}</div>`).join('');
-  // prev month padding
   const prevLast = new Date(calYear, calMonth, 0).getDate();
   for (let i = startDow - 1; i >= 0; i--) {
     html += `<div class="cal-cell other-month">${prevLast - i}</div>`;
   }
-  // current month
   for (let d = 1; d <= lastDay; d++) {
     const dateStr = calYear + '-' + String(calMonth + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
     const isToday = now.getFullYear() === calYear && now.getMonth() === calMonth && now.getDate() === d;
@@ -446,23 +937,21 @@ function renderCalendar() {
       onclick="selectCalDate('${dateStr}')"
       title="${dateStr}">${d}</div>`;
   }
-  // next month padding
   const total = startDow + lastDay;
   const rem = total % 7 === 0 ? 0 : 7 - (total % 7);
   for (let d = 1; d <= rem; d++) html += `<div class="cal-cell other-month">${d}</div>`;
 
   document.getElementById('calGrid').innerHTML = html;
 
-  // Events list
-  let eventsToShow = selectedDate ? (eventsByDate[selectedDate] || []) : events.sort((a, b) => a.date.localeCompare(b.date));
+  let eventsToShow = selectedDate ? (eventsByDate[selectedDate] || []) : events.slice().sort((a, b) => a.date.localeCompare(b.date));
   const titleEl = document.getElementById('calEventsTitle');
   titleEl.textContent = selectedDate ? 'Evenimente pe ' + selectedDate : 'Toate evenimentele (' + events.length + ')';
 
-  const COLOR_MAP = { purple: 'var(--purple)', blue: 'var(--blue)', green: 'var(--green)', amber: 'var(--amber)', red: 'var(--red)' };
+  const COLOR_MAP = { purple: 'var(--purple)', blue: 'var(--blue)', green: 'var(--green)', yellow: 'var(--amber)', red: 'var(--red)' };
   const evHtml = eventsToShow.length
     ? eventsToShow.map(e => `
       <div class="cal-event-item">
-        <div class="cal-event-dot" style="background:${COLOR_MAP[e.color]||'var(--purple)'}"></div>
+        <div class="cal-event-dot" style="background:${COLOR_MAP[e.color] || 'var(--purple)'}"></div>
         <div class="cal-event-title">${escHtml(e.title)}</div>
         <div class="cal-event-date">${e.date}</div>
         <button class="btn btn-danger btn-sm" onclick="deleteCalEvent('${e.id}')">🗑️</button>
@@ -568,29 +1057,29 @@ function toggleTheme() {
   setTheme(cur === 'light' ? 'dark' : 'light');
 }
 
-// ===================== EXPORT / IMPORT =====================
+// ===================== EXPORT / IMPORT (Strategy + Adapter) =====================
 function exportJSON() {
   const user = getCurrentUser();
-  const data = { username: user.username, tasks: user.tasks, notes: user.notes, calEvents: user.calEvents, exportedAt: new Date().toISOString() };
-  download('taskmanagement_export.json', JSON.stringify(data, null, 2), 'application/json');
+  const result = facade.exportUser(user, 'json');
+  const adapter = new JSONFileAdapter();
+  download('taskmanagement_export' + adapter.extension, result.content, result.contentType);
   showToast('📦 Exportat ca JSON!', 'success');
 }
 
 function exportTXT() {
   const user = getCurrentUser();
-  let txt = `TaskManagement Export — ${new Date().toLocaleDateString('ro-RO')}\nUtilizator: ${user.username}\nNivel: ${user.level} | XP: ${user.xp}\n${'─'.repeat(40)}\n\n`;
-  ['todo', 'prog', 'done'].forEach(s => {
-    const label = s === 'todo' ? 'TO DO' : s === 'prog' ? 'IN PROGRESS' : 'DONE';
-    txt += `[${label}]\n`;
-    user.tasks.filter(t => t.status === s).forEach(t => { txt += `  • ${t.title} (${CAT_LABELS[t.cat]})\n`; if (t.desc) txt += `    ${t.desc}\n`; });
-    txt += '\n';
-  });
-  if (user.notes && user.notes.length) {
-    txt += `[NOTIȚE]\n`;
-    user.notes.forEach(n => { txt += `  • ${n.content.slice(0, 80)}\n`; });
-  }
-  download('taskmanagement_export.txt', txt, 'text/plain');
+  const result = facade.exportUser(user, 'txt');
+  const adapter = new TXTFileAdapter();
+  download('taskmanagement_export' + adapter.extension, result.content, result.contentType);
   showToast('📄 Exportat ca Text!', 'success');
+}
+
+function exportCSV() {
+  const user = getCurrentUser();
+  const result = facade.exportUser(user, 'csv');
+  const adapter = new CSVFileAdapter();
+  download('taskmanagement_export' + adapter.extension, result.content, result.contentType);
+  showToast('📊 Exportat ca CSV!', 'success');
 }
 
 function importJSON(input) {
@@ -599,7 +1088,8 @@ function importJSON(input) {
   const reader = new FileReader();
   reader.onload = e => {
     try {
-      const data = JSON.parse(e.target.result);
+      const adapter = new JSONFileAdapter();
+      const data = adapter.deserialize(e.target.result);
       const user = getCurrentUser();
       if (data.tasks) {
         data.tasks.forEach(t => { if (!user.tasks.find(x => x.id === t.id)) user.tasks.push(t); });
@@ -628,7 +1118,7 @@ function download(filename, content, type) {
 }
 
 // ===================== MODALS =====================
-function openModal(id) { document.getElementById(id).classList.add('open'); }
+function openModal(id)  { document.getElementById(id).classList.add('open'); }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
 
 document.addEventListener('keydown', e => {
@@ -643,7 +1133,6 @@ document.addEventListener('click', e => {
   if (e.target.classList.contains('confirm-backdrop')) closeConfirm();
 });
 
-// Enter key in modals
 document.getElementById('taskTitle').addEventListener('keydown', e => { if (e.key === 'Enter') saveTask(); });
 document.getElementById('loginPass').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
 document.getElementById('calTitle').addEventListener('keydown', e => { if (e.key === 'Enter') saveCalEvent(); });
@@ -672,13 +1161,12 @@ function showToast(msg, type = 'success') {
 
 // ===================== UTILS =====================
 function escHtml(s) {
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 function formatDate(ts) {
   if (!ts) return '';
-  const d = new Date(ts);
-  return d.toLocaleDateString('ro-RO', { day: '2-digit', month: 'short', year: 'numeric' });
+  return new Date(ts).toLocaleDateString('ro-RO', { day: '2-digit', month: 'short', year: 'numeric' });
 }
 
 // ===================== BOOT =====================

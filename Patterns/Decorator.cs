@@ -158,7 +158,7 @@ namespace Task_Management.Patterns
 
         public override string GetDescription()
         {
-            return $"{_event.GetDescription()}\nℹ️ {_extraInfo}";
+            return $"{_event.GetDescription()}\n {_extraInfo}";
         }
     }
 
