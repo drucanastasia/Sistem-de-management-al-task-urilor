@@ -4,9 +4,9 @@ namespace Task_Management.Patterns
 {
     public class TaskTemplate : IPrototype<TaskItem>
     {
-        public required string Name { get; set; }
-        public required string Category { get; set; }
-        public required string DefaultDescription { get; set; }
+        public string Name { get; set; }
+        public  string Category { get; set; }
+        public  string DefaultDescription { get; set; }
 
         public TaskItem Clone()
         {

@@ -11,8 +11,20 @@ namespace Task_Management.Patterns
 
     public class JSONExportStrategy : IExportStrategy
     {
-        public string FileExtension => ".json";
-        public string ContentType => "application/json";
+        public string FileExtension
+        {
+            get
+            {
+                return ".json";
+            }
+        }
+        public string ContentType
+        {
+            get
+            {
+                return "application/json";
+            }
+        }
 
         public string Export(User user)
         {
@@ -25,9 +37,20 @@ namespace Task_Management.Patterns
 
     public class TXTExportStrategy : IExportStrategy
     {
-        public string FileExtension => ".txt";
-        public string ContentType => "text/plain";
-
+        public string FileExtension
+        {
+            get
+            {
+                return ".txt";
+            }
+        }
+        public string ContentType
+        {
+            get
+            {
+                return "text/plain";
+            }
+        }
         public string Export(User user)
         {
             var sb = new System.Text.StringBuilder();
@@ -51,9 +74,21 @@ namespace Task_Management.Patterns
 
     public class CSVExportStrategy : IExportStrategy
     {
-        public string FileExtension => ".csv";
-        public string ContentType => "text/csv";
-
+        public string FileExtension
+        {
+            get
+            {
+                return ".csv";
+            }
+        }
+        public string ContentType
+        {
+            get
+            {
+                return "text/csv";
+            }
+        }
+      
         public string Export(User user)
         {
             var sb = new System.Text.StringBuilder();

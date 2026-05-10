@@ -6,7 +6,7 @@ namespace Task_Management.Patterns
     public class Factory_Method
     {
         private const int XP_task = 10;
-        public static TaskItem CreateTask(string title, string category,string description = " ")
+        public static TaskItem CreateTask(string title, string category,string description)
         {
             return new TaskItem
             {

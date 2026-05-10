@@ -20,11 +20,20 @@ namespace Task_Management.Patterns
         public DateTime Date { get; internal set; }
         public string Id { get; internal set; }
 
-        public virtual string GetTitle() => Title;
+        public virtual string GetTitle() 
+        {
+            return Title;
+        }
 
-        public virtual string GetColor() => Color;
+        public virtual string GetColor()
+        {
+            return Color;
+        }
 
-        public virtual string GetDescription() => Description;
+        public virtual string GetDescription()
+        {
+            return Description;
+        }
     }
 
 
@@ -136,7 +145,7 @@ namespace Task_Management.Patterns
 
         public override string GetTitle()
         {
-            return $"🌴 {_event.GetTitle()}";
+            return $" {_event.GetTitle()}";
         }
 
         public override string GetColor()

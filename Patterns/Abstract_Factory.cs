@@ -6,9 +6,15 @@ namespace Task_Management.Patterns
         // Factory pentru Work
         public class WorkTaskFactory : ITaskFactory
         {
-            public string CategoryName => "work";
+            public string CategoryName
+        {
+            get 
+            { 
+                return "work"; 
+            }
+        }
 
-            public TaskItem CreateTask(string title, string description = "")
+            public TaskItem CreateTask(string title, string description)
             {
                 return new TaskItem
                 {
@@ -22,15 +28,21 @@ namespace Task_Management.Patterns
                 };
             }
 
-            public int GetXPBonus() => 5;
+        public int GetXPBonus()
+        {
+            return 5;
         }
+    }
 
         // Factory pentru Travel
         public class TravelTaskFactory : ITaskFactory
         {
-            public string CategoryName => "travel";
+            public string CategoryName 
+        {
+            get { return "travel"; }
+        }
 
-            public TaskItem CreateTask(string title, string description = "")
+            public TaskItem CreateTask(string title, string description)
             {
                 return new TaskItem
                 {
@@ -44,15 +56,21 @@ namespace Task_Management.Patterns
                 };
             }
 
-            public int GetXPBonus() => 3; 
+        public int GetXPBonus()
+        {
+            return 3;
         }
+    }
 
         // Factory pentru Free Time
         public class FreeTimeTaskFactory : ITaskFactory
         {
-            public string CategoryName => "freetime";
+            public string CategoryName 
+        {
+            get { return "freetime"; }
+        }
 
-            public TaskItem CreateTask(string title, string description = "")
+            public TaskItem CreateTask(string title, string description)
             {
                 return new TaskItem
                 {
@@ -66,15 +84,21 @@ namespace Task_Management.Patterns
                 };
             }
 
-            public int GetXPBonus() => 0;
+        public int GetXPBonus()
+        {
+            return 0;
         }
+    }
 
         // Factory pentru Rest
         public class RestTaskFactory : ITaskFactory
         {
-            public string CategoryName => "rest";
+        public string CategoryName
+        {
+            get { return "rest"; }
+        }
 
-            public TaskItem CreateTask(string title, string description = "")
+        public TaskItem CreateTask(string title, string description)
             {
                 return new TaskItem
                 {
@@ -88,8 +112,11 @@ namespace Task_Management.Patterns
                 };
             }
 
-            public int GetXPBonus() => 0;
+        public int GetXPBonus()
+        {
+            return 0;
         }
+    }
 
         // Factory Producer
         public static class TaskCategoryFactoryProducer

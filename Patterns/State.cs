@@ -12,7 +12,12 @@ namespace Task_Management.Patterns
 
     public class ToDoState : ITaskState
     {
-        public string StatusName => "todo";
+        public string StatusName
+        {
+         get{
+            return "todo";
+            }
+        }
 
         public void MoveToNext(TaskContext context)
         {
@@ -27,7 +32,13 @@ namespace Task_Management.Patterns
 
     public class InProgressState : ITaskState
     {
-        public string StatusName => "prog";
+        public string StatusName
+        {
+            get
+            {
+                return "prog";
+            }
+        }
 
         public void MoveToNext(TaskContext context)
         {
@@ -42,7 +53,13 @@ namespace Task_Management.Patterns
 
     public class DoneState : ITaskState
     {
-        public string StatusName => "done";
+        public string StatusName
+        {
+            get
+            {
+                return "done";
+            }
+        }
 
         public void MoveToNext(TaskContext context)
         {
@@ -72,10 +89,17 @@ namespace Task_Management.Patterns
             _task.Status = state.StatusName;
         }
 
-        public string GetStatus() => _state.StatusName;
+        public string GetStatus() 
+        { 
+            return _state.StatusName; 
+        }
 
-        public void Next() => _state.MoveToNext(this);
-        public void Previous() => _state.MoveToPrevious(this);
+        public void Next() { 
+            _state.MoveToNext(this); 
+        }
+        public void Previous() { 
+            _state.MoveToPrevious(this); 
+        }
     }
 
 }

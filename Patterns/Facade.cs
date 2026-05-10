@@ -1,4 +1,4 @@
-﻿using Task_Management.Interface;
+using Task_Management.Interface;
 using Task_Management.Models;
 using System.Text.Json;
 
@@ -11,6 +11,9 @@ namespace Task_Management.Patterns
             public static List<TaskItem> _tasks = new();
             private readonly TemplateManager _templates;
             private readonly IFileAdapter? _fileAdapter;
+
+         
+            private readonly List<TaskGroup> _groups = new();
 
             public TaskFacade()
             {
@@ -101,6 +104,40 @@ namespace Task_Management.Patterns
             }
 
             public string GetFileFormat() => _fileAdapter?.GetExtension() ?? "N/A";
+
+            public TaskGroup CreateGroup(string title)
+            {
+                var group = new TaskGroup { Title = title };
+                _groups.Add(group);
+                return group;
+            }
+
+            public bool AddTaskToGroup(TaskGroup group, string taskId)
+            {
+                var task = _tasks.FirstOrDefault(t => t.Id == taskId);
+                if (task == null) return false;
+
+                group.Add(task);
+                return true;
+            }
+
+            
+            public int CompleteGroup(TaskGroup group)
+            {
+                group.Complete();
+
+                if (group.IsCompleted())
+                {
+                    int totalXP = group.GetXP(); 
+                    System.Diagnostics.Debug.WriteLine(
+                        $"Grup '{group.GetTitle()}' completat! +{totalXP} XP (inclusiv bonus +30)");
+                    return totalXP;
+                }
+
+                return 0;
+            }
+
+            public List<TaskGroup> GetAllGroups() => _groups;
         }
     }
 }
