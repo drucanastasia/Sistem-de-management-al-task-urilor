@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\Task_Management\\Task_Management\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\wwwroot\\js\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:wwwroot\\js\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\factory_method.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\factory_method.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\strategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\strategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,8 +27,8 @@
       "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\prototype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\factory_method.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\factory_method.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\observer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\observer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\facade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,20 +39,20 @@
       "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\decorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\composite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\composite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\builder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\builder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\adapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\adapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\patterns\\abstract_factory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:patterns\\abstract_factory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\models\\calendarevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,24 +67,8 @@
       "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\enum\\taskstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:enum\\taskstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\interface\\taskfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:interface\\taskfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\interface\\iprototype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -85,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\models\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:models\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDA7025C-8B9B-AD8A-CE9F-7344DD5C4363}|Task_Management.csproj|d:\\task_management\\task_management\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -109,142 +101,180 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAAAIEAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-02T09:38:39.489Z",
-              "IsPinned": true,
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAPAAAAAAAAAAAAAYwAABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T12:36:45.557Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "app.js",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\wwwroot\\js\\app.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\app.js",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\wwwroot\\js\\app.js",
+              "RelativeToolTip": "wwwroot\\js\\app.js",
+              "ViewState": "AgIAACUAAAAAAAAAAAA0wDsBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-11T12:35:50.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Strategy.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Strategy.cs",
+              "RelativeDocumentMoniker": "Patterns\\Strategy.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Strategy.cs",
+              "RelativeToolTip": "Patterns\\Strategy.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T12:35:44.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Prototype.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Prototype.cs",
               "RelativeDocumentMoniker": "Patterns\\Prototype.cs",
               "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Prototype.cs",
               "RelativeToolTip": "Patterns\\Prototype.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T06:01:38.949Z",
+              "WhenOpened": "2026-05-11T12:35:31.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Observer.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Observer.cs",
+              "RelativeDocumentMoniker": "Patterns\\Observer.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Observer.cs",
+              "RelativeToolTip": "Patterns\\Observer.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T12:35:11.668Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Factory_Method.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Factory_Method.cs",
+              "RelativeDocumentMoniker": "Patterns\\Factory_Method.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Factory_Method.cs",
+              "RelativeToolTip": "Patterns\\Factory_Method.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T12:34:53.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Facade.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Facade.cs",
+              "RelativeDocumentMoniker": "Patterns\\Facade.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Facade.cs",
+              "RelativeToolTip": "Patterns\\Facade.cs",
+              "ViewState": "AgIAAEwBAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T12:34:34.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Decorator.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Decorator.cs",
+              "RelativeDocumentMoniker": "Patterns\\Decorator.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Decorator.cs",
+              "RelativeToolTip": "Patterns\\Decorator.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T12:34:21.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Composite.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Composite.cs",
+              "RelativeDocumentMoniker": "Patterns\\Composite.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Composite.cs",
+              "RelativeToolTip": "Patterns\\Composite.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAwwB8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T12:34:09.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Command.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Command.cs",
+              "RelativeDocumentMoniker": "Patterns\\Command.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Command.cs",
+              "RelativeToolTip": "Patterns\\Command.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T12:34:07.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Builder.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Builder.cs",
+              "RelativeDocumentMoniker": "Patterns\\Builder.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Builder.cs",
+              "RelativeToolTip": "Patterns\\Builder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T12:34:05.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Adapter.cs",
+              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Adapter.cs",
+              "RelativeDocumentMoniker": "Patterns\\Adapter.cs",
+              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Adapter.cs",
+              "RelativeToolTip": "Patterns\\Adapter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T12:33:59.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "State.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\State.cs",
               "RelativeDocumentMoniker": "Patterns\\State.cs",
               "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\State.cs",
               "RelativeToolTip": "Patterns\\State.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAA6wGkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-08T18:50:11.9Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Strategy.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Strategy.cs",
-              "RelativeDocumentMoniker": "Patterns\\Strategy.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Strategy.cs",
-              "RelativeToolTip": "Patterns\\Strategy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T18:48:06.454Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Factory_Method.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Factory_Method.cs",
-              "RelativeDocumentMoniker": "Patterns\\Factory_Method.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Factory_Method.cs",
-              "RelativeToolTip": "Patterns\\Factory_Method.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T05:35:24.132Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Facade.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Facade.cs",
-              "RelativeDocumentMoniker": "Patterns\\Facade.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Facade.cs",
-              "RelativeToolTip": "Patterns\\Facade.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T10:03:46.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Decorator.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Decorator.cs",
-              "RelativeDocumentMoniker": "Patterns\\Decorator.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Decorator.cs",
-              "RelativeToolTip": "Patterns\\Decorator.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAowKAAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T18:02:28.225Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Builder.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Builder.cs",
-              "RelativeDocumentMoniker": "Patterns\\Builder.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Builder.cs",
-              "RelativeToolTip": "Patterns\\Builder.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T18:15:15.393Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Adapter.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Adapter.cs",
-              "RelativeDocumentMoniker": "Patterns\\Adapter.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Adapter.cs",
-              "RelativeToolTip": "Patterns\\Adapter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T18:42:11.681Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Abstract_Factory.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Patterns\\Abstract_Factory.cs",
-              "RelativeDocumentMoniker": "Patterns\\Abstract_Factory.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Patterns\\Abstract_Factory.cs",
-              "RelativeToolTip": "Patterns\\Abstract_Factory.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAiwEQAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T06:31:42.546Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "CalendarEvent.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\CalendarEvent.cs",
               "RelativeDocumentMoniker": "Models\\CalendarEvent.cs",
@@ -256,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -268,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
@@ -280,31 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T08:43:15.072Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "TaskItem.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\TaskItem.cs",
-              "RelativeDocumentMoniker": "Models\\TaskItem.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Models\\TaskItem.cs",
-              "RelativeToolTip": "Models\\TaskItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T18:11:05.302Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "TaskState.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Enum\\TaskState.cs",
               "RelativeDocumentMoniker": "Enum\\TaskState.cs",
@@ -316,31 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "TaskFactory.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Interface\\TaskFactory.cs",
-              "RelativeDocumentMoniker": "Interface\\TaskFactory.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Interface\\TaskFactory.cs",
-              "RelativeToolTip": "Interface\\TaskFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T06:33:22.77Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T05:40:01.782Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "Note.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Models\\Note.cs",
               "RelativeDocumentMoniker": "Models\\Note.cs",
@@ -352,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "IPrototype.cs",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Interface\\IPrototype.cs",
               "RelativeDocumentMoniker": "Interface\\IPrototype.cs",
@@ -364,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "Task_Management.csproj",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Task_Management.csproj",
               "RelativeDocumentMoniker": "Task_Management.csproj",
@@ -376,7 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 21,
               "Title": "Auth.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Auth.cshtml",
               "ToolTip": "C:\\Users\\user\\Desktop\\Auth.cshtml",
@@ -386,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 20,
               "Title": "style.css",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\style.css",
@@ -398,19 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Task_Management\\Task_Management\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T20:01:07.432Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 22,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\Task_Management\\Task_Management\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",

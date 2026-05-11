@@ -5,7 +5,7 @@ namespace Task_Management.Interface
 
     public interface ITaskFactory
     {
-        TaskItem CreateTask(string title, string description = "");
+        TaskItem CreateTask(string title, string description );
         string CategoryName { get; }
         int GetXPBonus();
     }

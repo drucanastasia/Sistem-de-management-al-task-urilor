@@ -1,11 +1,4 @@
-// ============================================================
-//  TaskManagement — app.js cu Design Patterns
-//  Patterns: Abstract Factory, Factory Method, Builder,
-//            Prototype, State, Strategy, Decorator, Adapter, Facade
-// ============================================================
 
-// ===================== ABSTRACT FACTORY =====================
-// Fiecare categorie are propria factory cu XP bonus diferit
 
 class WorkTaskFactory {
   get categoryName() { return 'munca'; }
@@ -88,8 +81,7 @@ class TaskCategoryFactoryProducer {
   }
 }
 
-// ===================== FACTORY METHOD =====================
-// Factory simplu pentru Calendar Events
+
 
 class Factory_Method {
   static createEvent(title, dateStr, color) {
@@ -103,8 +95,6 @@ class Factory_Method {
   }
 }
 
-// ===================== BUILDER =====================
-// Builder pentru task-uri cu câmpuri opționale
 
 class TaskItemBuilder {
   constructor() {
@@ -127,8 +117,7 @@ class TaskItemBuilder {
   build()               { return { ...this._task }; }
 }
 
-// ===================== PROTOTYPE =====================
-// Template-uri predefinite care pot fi clonate
+
 
 class TaskTemplate {
   constructor(name, category, defaultDescription) {
@@ -432,6 +421,23 @@ const facade = new TaskFacade();
 // ===================== STATE (localStorage) =====================
 const DB_KEY = 'taskmanagement_db';
 
+// Migrare: corectează task-urile vechi cu categoria greșită (en → ro)
+function migrateCategories() {
+  try {
+    const db = JSON.parse(localStorage.getItem(DB_KEY));
+    if (!db) return;
+    const MAP = { work: 'munca', freetime: 'timp' };
+    let changed = false;
+    (db.users || []).forEach(u => {
+      (u.tasks || []).forEach(t => {
+        if (MAP[t.cat]) { t.cat = MAP[t.cat]; changed = true; }
+      });
+    });
+    if (changed) localStorage.setItem(DB_KEY, JSON.stringify(db));
+  } catch (e) { /* ignore */ }
+}
+migrateCategories();
+
 function getDB() {
   try { return JSON.parse(localStorage.getItem(DB_KEY)) || { users: [], sessions: {} }; }
   catch { return { users: [], sessions: {} }; }
@@ -653,6 +659,7 @@ function saveTask() {
         task.completedAt = Date.now();
         const res = awardXp(user, task.xp || 10);
         leveledUp = res.leveledUp;
+        checkCategoryBonus(user, task.cat);
       } else {
         task.status = status;
       }
@@ -665,6 +672,7 @@ function saveTask() {
       task.completedAt = Date.now();
       const r = awardXp(user, task.xp || 10);
       leveledUp = r.leveledUp;
+      checkCategoryBonus(user, task.cat);
     }
     user.tasks.push(task);
   }
@@ -693,7 +701,20 @@ function awardXp(user, amount) {
   return { leveledUp };
 }
 
-// moveTask folosește State Pattern pentru tranziții
+// Composite bonus: la fiecare 5 taskuri finalizate dintr-o categorie → +30 XP
+const CATEGORY_BONUS_XP = 30;
+const CATEGORY_BONUS_THRESHOLD = 5;
+
+function checkCategoryBonus(user, cat) {
+  const doneCat = user.tasks.filter(t => t.cat === cat && t.status === 'done').length;
+  if (doneCat > 0 && doneCat % CATEGORY_BONUS_THRESHOLD === 0) {
+    awardXp(user, CATEGORY_BONUS_XP);
+    const catLabel = { munca: 'Muncă', travel: 'Travel', timp: 'Timp liber', rest: 'Rest' }[cat] || cat;
+    showToast('🏆 Bonus grup! ' + doneCat + ' taskuri "' + catLabel + '" finalizate! +' + CATEGORY_BONUS_XP + ' XP', 'level');
+    return true;
+  }
+  return false;
+}
 function moveTask(id, direction) {
   const user = getCurrentUser();
   const task = user.tasks.find(t => t.id === id);
@@ -708,6 +729,7 @@ function moveTask(id, direction) {
     task.completedAt = Date.now();
     const r = awardXp(user, task.xp || 10);
     leveledUp = r.leveledUp;
+    checkCategoryBonus(user, task.cat);
   }
   if (task.status !== 'done') {
     task.completedAt = null;
