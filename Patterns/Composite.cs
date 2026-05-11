@@ -4,10 +4,17 @@ namespace Task_Management.Models
 {
     public class TaskGroup : ITaskComponent
     {
-        private readonly List<ITaskComponent> _children = new();
+        private readonly List<ITaskComponent> _children;
         private const int GROUP_BONUS_XP = 30;
+        private const int BONUS_THRESHOLD = 5;
 
-        public string Title { get; set; } = string.Empty;
+        public string Title { get; set; }
+
+        public TaskGroup()
+        {
+            _children = new List<ITaskComponent>();
+            Title = string.Empty;
+        }
 
         public void Add(ITaskComponent component)
         {
@@ -19,25 +26,23 @@ namespace Task_Management.Models
             _children.Remove(component);
         }
 
-        public List<ITaskComponent> GetChildren() => _children;
+        public List<ITaskComponent> GetChildren() { return _children;}
 
-       
-        public string GetTitle() => $" {Title} ({_children.Count} taskuri)";
+        public string GetTitle(){ return $" {Title} ({_children.Count} taskuri)";} 
 
         public int GetXP()
         {
             int totalXP = _children.Sum(c => c.GetXP());
 
-          
-            if (IsCompleted())
-                totalXP += GROUP_BONUS_XP;
+            int completedCount = _children.Count(c => c.IsCompleted());
+            int bonusTimes = completedCount / BONUS_THRESHOLD;
+            totalXP += bonusTimes * GROUP_BONUS_XP;
 
             return totalXP;
         }
 
-
-        public bool IsCompleted() => _children.Count > 0 && _children.All(c => c.IsCompleted());
-
+        public bool IsCompleted(){ get { return _children.Count > 0 && _children.All(c => c.IsCompleted());
+        }}
         public void Complete()
         {
             foreach (var child in _children)

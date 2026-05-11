@@ -95,7 +95,13 @@
             }
         }
 
-        public bool CanUndo => _history.Count > 0;
+        public bool CanUndo
+{
+    get
+    {
+        return _history.Count > 0;
+    }
+}
     }
 }
 

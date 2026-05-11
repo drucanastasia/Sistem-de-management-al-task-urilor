@@ -1,4 +1,7 @@
-﻿namespace Task_Management.Models.Observers
+﻿using System;
+using System.Collections.Generic;
+
+namespace Task_Management.Models.Observers
 {
     public interface ILevelObserver
     {
@@ -9,7 +12,7 @@
 
     public class LevelSubject
     {
-        private List<ILevelObserver> _observers = new();
+        private List<ILevelObserver> _observers = new List<ILevelObserver>();
         public int CurrentLevel { get; private set; }
         public int TotalXP { get; private set; }
 
@@ -33,26 +36,20 @@
             foreach (var observer in _observers)
             {
                 if (CurrentLevel > oldLevel)
-                {
                     observer.OnLevelUp(CurrentLevel, TotalXP);
-                }
             }
         }
 
         public void NotifyTaskCompleted(string taskTitle, int xp)
         {
             foreach (var observer in _observers)
-            {
                 observer.OnTaskCompleted(taskTitle, xp);
-            }
         }
 
         public void NotifyAchievement(string achievement)
         {
             foreach (var observer in _observers)
-            {
                 observer.OnAchievement(achievement);
-            }
         }
     }
 
@@ -74,10 +71,9 @@
         }
     }
 
-
     public class AchievementObserver : ILevelObserver
     {
-        private List<string> _unlockedAchievements = new();
+        private List<string> _unlockedAchievements = new List<string>();
         private int _completedTasks = 0;
 
         public void OnLevelUp(int newLevel, int totalXP)
@@ -106,7 +102,6 @@
         public void OnTaskCompleted(string taskTitle, int xpGained)
         {
             _completedTasks++;
-
             if (_completedTasks == 10 && !_unlockedAchievements.Contains("10tasks"))
             {
                 _unlockedAchievements.Add("10tasks");
@@ -119,13 +114,12 @@
             }
         }
 
-        public List<string> GetUnlockedAchievements() => _unlockedAchievements;
+        public List<string> GetUnlockedAchievements() {return  _unlockedAchievements;}
     }
-
 
     public class NotificationLoggerObserver : ILevelObserver
     {
-        private List<Notification> _notifications = new();
+        private List<Notification> _notifications = new List<Notification>();
 
         public void OnLevelUp(int newLevel, int totalXP)
         {
@@ -157,13 +151,19 @@
             });
         }
 
-        public List<Notification> GetNotifications() => _notifications;
+        public List<Notification> GetNotifications() {return _notifications;}
     }
 
-    public class Notification
+  public class Notification
+{
+    public string Type { get; set; }
+    public string Message { get; set; }
+    public DateTime Timestamp { get; set; }
+    
+    public Notification()
     {
-        public string Type { get; set; } 
-        public string Message { get; set; }
-        public DateTime Timestamp { get; set; }
+        Type = string.Empty;
+        Message = string.Empty;
     }
+}
 }

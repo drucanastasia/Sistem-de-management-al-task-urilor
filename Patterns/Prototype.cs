@@ -62,6 +62,12 @@ namespace Task_Management.Patterns
                 Category = "freetime",
                 DefaultDescription = "30 minute antrenament"
             });
+            AddTemplate("Pauza", new TaskTemplate
+            {
+                Name = "Pauza",
+                Category = "rest",
+                DefaultDescription = "odihna la mare "
+            });
         }
     }
 }

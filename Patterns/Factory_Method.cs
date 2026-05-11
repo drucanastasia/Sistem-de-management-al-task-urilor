@@ -2,7 +2,7 @@
 using Task_Management.Models;
 namespace Task_Management.Patterns
 {
-    //Factory pentru taskuri
+
     public class Factory_Method
     {
         private const int XP_task = 10;
@@ -19,7 +19,7 @@ namespace Task_Management.Patterns
                 CreatedAt = DateTime.Now
             };
         }
-    //Factory pentru Calendar    
+    
 public static CalendarEvent CreateEvent(string title,  DateTime date, string color)
         {
             return new CalendarEvent
