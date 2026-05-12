@@ -41,8 +41,10 @@ namespace Task_Management.Models
             return totalXP;
         }
 
-        public bool IsCompleted(){ get { return _children.Count > 0 && _children.All(c => c.IsCompleted());
-        }}
+        public bool IsCompleted(){ 
+           return _children.Count > 0 && _children.All(c => c.IsCompleted());
+        
+        }
         public void Complete()
         {
             foreach (var child in _children)

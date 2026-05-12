@@ -68,7 +68,6 @@ class RestTaskFactory {
   }
 }
 
-// Factory Producer — alege factory-ul corect după categorie
 class TaskCategoryFactoryProducer {
   static getFactory(category) {
     switch (category) {
@@ -164,13 +163,12 @@ class TemplateManager {
 const templateManager = new TemplateManager();
 templateManager.loadDefaults();
 
-// ===================== STATE PATTERN =====================
-// Stările unui task: ToDo → InProgress → Done (și înapoi)
+
 
 class ToDoState {
   get statusName() { return 'todo'; }
   moveToNext(ctx)     { ctx.setState(new InProgressState()); }
-  moveToPrevious(ctx) { /* nu face nimic, e primul */ }
+  moveToPrevious(ctx) {  }
 }
 
 class InProgressState {
@@ -181,7 +179,7 @@ class InProgressState {
 
 class DoneState {
   get statusName() { return 'done'; }
-  moveToNext(ctx)     { /* nu face nimic, e ultimul */ }
+  moveToNext(ctx)     {  }
   moveToPrevious(ctx) { ctx.setState(new InProgressState()); }
 }
 
@@ -205,8 +203,7 @@ class TaskContext {
   previous()   { this._state.moveToPrevious(this); }
 }
 
-// ===================== STRATEGY PATTERN =====================
-// Strategii diferite de export
+
 
 class JSONExportStrategy {
   get fileExtension() { return '.json'; }
@@ -263,7 +260,7 @@ class CSVExportStrategy {
   }
 }
 
-// Exportor — primește o strategie și o execută
+
 class ExportContext {
   constructor(strategy) { this._strategy = strategy; }
   setStrategy(strategy) { this._strategy = strategy; }
@@ -276,8 +273,7 @@ class ExportContext {
   }
 }
 
-// ===================== DECORATOR PATTERN =====================
-// Decorăm Calendar Events cu tip/culoare/prefix la titlu
+
 
 class CalendarEventBase {
   constructor(data) { this._data = data; }
@@ -301,26 +297,26 @@ class UrgentEventDecorator extends EventDecorator {
 }
 
 class WorkEventDecorator extends EventDecorator {
-  getTitle() { return `💼 ${this._event.getTitle()}`; }
+  getTitle() { return ` ${this._event.getTitle()}`; }
   getColor() { return 'blue'; }
 }
 
 class RelaxEventDecorator extends EventDecorator {
-  getTitle() { return `😌 ${this._event.getTitle()}`; }
+  getTitle() { return ` ${this._event.getTitle()}`; }
   getColor() { return 'green'; }
 }
 
 class HolidayEventDecorator extends EventDecorator {
-  getTitle() { return `🌴 ${this._event.getTitle()}`; }
+  getTitle() { return ` ${this._event.getTitle()}`; }
   getColor() { return 'yellow'; }
 }
 
 class PersonalEventDecorator extends EventDecorator {
-  getTitle() { return `✨ ${this._event.getTitle()}`; }
+  getTitle() { return ` ${this._event.getTitle()}`; }
   getColor() { return 'purple'; }
 }
 
-// Alege decoratorul potrivit după culoarea selectată
+
 function applyEventDecorator(baseEvent, color) {
   switch (color) {
     case 'red':    return new UrgentEventDecorator(baseEvent);
@@ -332,12 +328,10 @@ function applyEventDecorator(baseEvent, color) {
   }
 }
 
-// ===================== ADAPTER PATTERN =====================
-// Adaptoare pentru citire/scriere fișiere (folosite de export)
 
 class JSONFileAdapter {
   get extension() { return '.json'; }
-  serialize(content) { return content; } // deja string JSON
+  serialize(content) { return content; } 
   deserialize(content) { return JSON.parse(content); }
 }
 
@@ -353,21 +347,18 @@ class CSVFileAdapter {
   deserialize(content) { return content; }
 }
 
-// ===================== FACADE =====================
-// TaskFacade — punct unic de intrare pentru operațiile principale
 
 class TaskFacade {
   constructor() {
     this._templateManager = templateManager;
   }
 
-  // Creează task via Abstract Factory (XP diferit per categorie)
   createTask(title, category, description = '') {
     const factory = TaskCategoryFactoryProducer.getFactory(category);
     return factory.createTask(title, description);
   }
 
-  // Creează task via Builder (pentru cazuri cu câmpuri custom)
+  
   createTaskWithBuilder(title, category, description, xp) {
     return new TaskItemBuilder()
       .setTitle(title)
@@ -377,20 +368,19 @@ class TaskFacade {
       .build();
   }
 
-  // Creează task din template (Prototype)
+
   createFromTemplate(key) {
     return this._templateManager.createFromTemplate(key);
   }
 
-  // Schimbă starea unui task via State pattern
+  
   moveTaskState(task, direction) {
     const ctx = new TaskContext(task);
     if (direction === 'next') ctx.next();
     else ctx.previous();
-    return task.status; // task.status e modificat in-place de TaskContext
+    return task.status;
   }
 
-  // Export via Strategy
   exportUser(user, format) {
     let strategy;
     switch (format) {
@@ -402,12 +392,12 @@ class TaskFacade {
     return ctx.execute(user);
   }
 
-  // Creează eveniment cu Decorator aplicat
+  
   createDecoratedEvent(title, dateStr, color) {
     const rawEvent = Factory_Method.createEvent(title, dateStr, color);
     const base = new CalendarEventBase(rawEvent);
     const decorated = applyEventDecorator(base, color);
-    // Returnăm obiectul raw dar cu titlul/culoarea decorată
+    
     return {
       ...rawEvent,
       title: decorated.getTitle(),
@@ -418,23 +408,23 @@ class TaskFacade {
 
 const facade = new TaskFacade();
 
-// ===================== STATE (localStorage) =====================
+
 const DB_KEY = 'taskmanagement_db';
 
-// Migrare: corectează task-urile vechi cu categoria greșită (en → ro)
+
 function migrateCategories() {
-  try {
-    const db = JSON.parse(localStorage.getItem(DB_KEY));
-    if (!db) return;
-    const MAP = { work: 'munca', freetime: 'timp' };
-    let changed = false;
-    (db.users || []).forEach(u => {
-      (u.tasks || []).forEach(t => {
-        if (MAP[t.cat]) { t.cat = MAP[t.cat]; changed = true; }
-      });
-    });
-    if (changed) localStorage.setItem(DB_KEY, JSON.stringify(db));
-  } catch (e) { /* ignore */ }
+    try {
+        const db = JSON.parse(localStorage.getItem(DB_KEY));
+        if (!db) return;
+        const MAP = { work: 'munca', freetime: 'timp' };
+        let changed = false;
+        (db.users || []).forEach(u => {
+            (u.tasks || []).forEach(t => {
+                if (MAP[t.cat]) { t.cat = MAP[t.cat]; changed = true; }
+            });
+        });
+        if (changed) localStorage.setItem(DB_KEY, JSON.stringify(db));
+    } catch (e) { }
 }
 migrateCategories();
 
@@ -509,9 +499,9 @@ function doRegister() {
   err.style.display = 'none';
   const user = freshUser(username, first, last);
   user.password = btoa(pass);
-  // Demo tasks — create via Facade (Abstract Factory)
+ 
   user.tasks = [
-    facade.createTask('Bun venit în TaskManagement! 🎉', 'timp', 'Acesta este primul tău task. Poți să îl muți în Progress sau Done.'),
+    facade.createTask('Bun venit în TaskManagement!', 'timp', 'Acesta este primul tău task. Poți să îl muți în Progress sau Done.'),
     facade.createTask('Explorează toate funcțiile', 'munca', 'Calendar, Notițe, Export CSV/JSON/TXT, Temă dark, Șabloane...'),
   ];
   saveUser(user);
@@ -701,7 +691,7 @@ function awardXp(user, amount) {
   return { leveledUp };
 }
 
-// Composite bonus: la fiecare 5 taskuri finalizate dintr-o categorie → +30 XP
+
 const CATEGORY_BONUS_XP = 30;
 const CATEGORY_BONUS_THRESHOLD = 5;
 

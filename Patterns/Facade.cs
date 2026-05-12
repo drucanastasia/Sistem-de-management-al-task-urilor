@@ -3,6 +3,7 @@ using Task_Management.Models;
 using Task_Management.Models.Commands;
 using Task_Management.Models.Observers;
 using System.Text.Json;
+using Task_Management.Patterns;
 
 
 namespace Task_Management.Patterns
@@ -33,8 +34,8 @@ namespace Task_Management.Patterns
         }
 
        
-    }
-}
+    
+
 
         public TaskItem CreateTask(string title, string category, string descriprion)
         {
